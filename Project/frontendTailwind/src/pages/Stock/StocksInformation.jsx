@@ -185,7 +185,7 @@ const StockInformation = () => {
                   let totalValue = 0;
                   code = data.stockCode;
 
-                  {
+                  
                     stockUtil
                       .filter(
                         (stockUtilData) =>
@@ -199,8 +199,8 @@ const StockInformation = () => {
                           (lastAdd = stockUtilData.date.split('T')[0]);
                         price = stockUtilData.unitPrice;
                       });
-                  }
-                  {
+                  
+              
                     stockUtil
                       .filter(
                         (stockUtilData) =>
@@ -213,7 +213,7 @@ const StockInformation = () => {
                         (totIssues += stockUtilData.quantity),
                           (lastIssue = stockUtilData.date.split('T')[0]);
                       });
-                  }
+                  
                     quantity = totAdds - totIssues - data.damagedQty;
 
                     totalValue = price * quantity;
