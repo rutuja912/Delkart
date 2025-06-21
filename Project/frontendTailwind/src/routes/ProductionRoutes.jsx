@@ -1,6 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { OrderViewAll, ProductionDashBoard, AddOrder, UpdateOrder, PreviewOrder } from '../pages/Production/Index';
+import {
+  OrderViewAll,
+  ProductionDashBoard,
+  AddOrder,
+  UpdateOrder,
+  PreviewOrder,
+} from '../pages/Production/Index';
 
 function ProductionRoutes() {
   return (

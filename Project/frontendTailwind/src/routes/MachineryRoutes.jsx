@@ -1,6 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MachineryDashboard, MachineryNew, MachineryUpdate, MachineryViewAll, MachineryReport, MaintenanceDashboard, MaintenanceNew, MaintenanceUpdate, MaintenanceViewAll, MaintainenceTask, MaintainenceReport } from '../pages/MachineryAndMaintenance';
+import {
+  MachineryDashboard,
+  MachineryNew,
+  MachineryUpdate,
+  MachineryViewAll,
+  MachineryReport,
+  MaintenanceDashboard,
+  MaintenanceNew,
+  MaintenanceUpdate,
+  MaintenanceViewAll,
+  MaintainenceTask,
+  MaintainenceReport,
+} from '../pages/MachineryAndMaintenance';
 
 function MachineryRoutes() {
   return (
@@ -13,7 +25,10 @@ function MachineryRoutes() {
         <Route path="/MachineryUpdate/:id" element={<MachineryUpdate />} />
         <Route path="/MachineryReport/" element={<MachineryReport />} />
         {/* maintenance management  */}
-        <Route path="/MaintenanceDashboard" element={<MaintenanceDashboard />} />
+        <Route
+          path="/MaintenanceDashboard"
+          element={<MaintenanceDashboard />}
+        />
         <Route path="/MaintenanceViewAll" element={<MaintenanceViewAll />} />
         <Route path="/MaintenanceCreate" element={<MaintenanceNew />} />
         <Route path="/MaintenanceUpdate/:id" element={<MaintenanceUpdate />} />

@@ -1,6 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FinanceDashboard, FinanceViewAll, FinanceNew, FinanceUpdate, FinancePreview, SalaryDashboard, SalaryNew, SalaryUpdate, SalaryViewAll } from '../pages/Finance';
+import {
+  FinanceDashboard,
+  FinanceViewAll,
+  FinanceNew,
+  FinanceUpdate,
+  FinancePreview,
+  SalaryDashboard,
+  SalaryNew,
+  SalaryUpdate,
+  SalaryViewAll,
+} from '../pages/Finance';
 
 function FinanceRoutes() {
   return (

@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { FiUsers, FiUserPlus } from "react-icons/fi";
-import { TbBuilding } from "react-icons/tb";
-import { DashTopBox, DashTopButton } from "../../components";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { FiUsers, FiUserPlus } from 'react-icons/fi';
+import { TbBuilding } from 'react-icons/tb';
+import { DashTopBox, DashTopButton } from '../../components';
 
-import { useStateContext } from "../../contexts/ContextProvider";
+import { useStateContext } from '../../contexts/ContextProvider';
 
-import { FiSettings } from "react-icons/fi";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "../../components";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import { FiSettings } from 'react-icons/fi';
+import { Navbar, Footer, Sidebar, ThemeSettings } from '../../components';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 const SupplierDashboard = () => {
   const {
@@ -26,7 +26,7 @@ const SupplierDashboard = () => {
 
   const getSupplier = async () => {
     axios
-      .get("http://localhost:8070/supplier/")
+      .get('http://localhost:8070/supplier/')
       .then((res) => {
         setSupplier(res.data);
       })
@@ -37,8 +37,8 @@ const SupplierDashboard = () => {
 
   useEffect(() => {
     getSupplier();
-    const currentThemeColor = localStorage.getItem("colorMode");
-    const currentThemeMode = localStorage.getItem("themeMode");
+    const currentThemeColor = localStorage.getItem('colorMode');
+    const currentThemeMode = localStorage.getItem('themeMode');
     if (currentThemeColor && currentThemeMode) {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
@@ -49,17 +49,16 @@ const SupplierDashboard = () => {
 
   return (
     <div>
-
-      <div className={currentMode === "Dark" ? "dark" : ""}>
+      <div className={currentMode === 'Dark' ? 'dark' : ''}>
         <div className="flex relative dark:bg-main-dark-bg">
-          <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            {" "}
+          <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            {' '}
             {/* THEME SETTINGS BUTTON */}
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
                 onClick={() => setThemeSettings(true)}
-                style={{ background: currentColor, borderRadius: "50%" }}
+                style={{ background: currentColor, borderRadius: '50%' }}
                 className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
               >
                 <FiSettings />
@@ -81,8 +80,8 @@ const SupplierDashboard = () => {
             className={
               // MAIN BACKGROUND IMPLEMENTATION
               activeMenu
-                ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
-                : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
+                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
             {/* NAVBAR IMPLEMENTATION */}
@@ -96,20 +95,26 @@ const SupplierDashboard = () => {
                 <div className="mt-5">
                   <div className="flex flex-wrap lg:flex-nowrap justify-left ml-10 mt-5">
                     <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-                      {/* top buttons in the dashboard */}{" "}
+                      {/* top buttons in the dashboard */}{' '}
                       {/* use for navigation buttons*/}
                       <Link to="/SupplierViewAll">
-                        <DashTopButton value="View All suppliers" icon={<FiUsers />} />
+                        <DashTopButton
+                          value="View All suppliers"
+                          icon={<FiUsers />}
+                        />
                       </Link>
                       <Link to="/SupplierCreate">
-                        <DashTopButton value="Create New suppliers" icon={<FiUserPlus />} />
+                        <DashTopButton
+                          value="Create New suppliers"
+                          icon={<FiUserPlus />}
+                        />
                       </Link>
                     </div>
                   </div>
 
                   <div className="flex flex-wrap lg:flex-nowrap justify-center mt-5">
                     <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-                      {/* small top boxes in the dashboard */}{" "}
+                      {/* small top boxes in the dashboard */}{' '}
                       {/* use minimum 3, maximum 5 */}
                       <DashTopBox
                         icon={<FiUsers />}

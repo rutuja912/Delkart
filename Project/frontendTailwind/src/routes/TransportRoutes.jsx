@@ -1,7 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { DriverDashboard, DriverViewAll, DriverNew, DriverUpdate, DriverReport } from '../pages/Driver';
-import { TransportDashboard, TransportViewAll, TransportNew, TransportUpdate, TransportReport } from '../pages/Transport';
+import {
+  DriverDashboard,
+  DriverViewAll,
+  DriverNew,
+  DriverUpdate,
+  DriverReport,
+} from '../pages/Driver';
+import {
+  TransportDashboard,
+  TransportViewAll,
+  TransportNew,
+  TransportUpdate,
+  TransportReport,
+} from '../pages/Transport';
 
 function TransportRoutes() {
   return (

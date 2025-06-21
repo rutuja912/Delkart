@@ -7,5 +7,3 @@ export { default as SalesRoutes } from './SalesRoutes';
 export { default as StockRoutes } from './StockRoutes';
 export { default as SupplierRoutes } from './SupplierRoutes';
 export { default as TransportRoutes } from './TransportRoutes';
-
-

@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { GiRolledCloth, GiSewingNeedle, GiClothes } from 'react-icons/gi';
-import { FaCoins, FaChartBar, FaInbox, FaLayerGroup, FaHourglassHalf, FaGetPocket, FaFileAlt } from 'react-icons/fa';
+import {
+  FaCoins,
+  FaChartBar,
+  FaInbox,
+  FaLayerGroup,
+  FaHourglassHalf,
+  FaGetPocket,
+  FaFileAlt,
+} from 'react-icons/fa';
 import { AiOutlineStock } from 'react-icons/ai';
 import { DashTopBox, DashTopButton } from '../../components';
 import { BiAddToQueue, BiCheckCircle } from 'react-icons/bi';
@@ -16,57 +24,72 @@ import StockUtilPieChart from '../../components/StockUtilPieChart';
 import StockUtilLineChart from '../../components/StockUtilLineChart';
 import { CgBox } from 'react-icons/cg';
 
-
 const StockUtilisationDashboard = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings, } = useStateContext();
+  const {
+    setCurrentColor,
+    setCurrentMode,
+    currentMode,
+    activeMenu,
+    currentColor,
+    themeSettings,
+    setThemeSettings,
+  } = useStateContext();
 
   const [stockUtil, setStockUtil] = useState([]); //damagedStock is the state variable and setDamagedStock is the function to update the state variable
   const [Order, setOrder] = useState([]);
   const [processing, setProcessing] = useState([]);
   const [resolved, setResolved] = useState([]);
 
-  const getStockUtil = async () => {  //getdamagedStock is the function to get the data from the backend
-    axios.get("http://localhost:8070/stockUtilisation/")
+  const getStockUtil = async () => {
+    //getdamagedStock is the function to get the data from the backend
+    axios
+      .get('http://localhost:8070/stockUtilisation/')
       .then((res) => {
         setStockUtil(res.data); //setDamagedStock is used to update the state variable
         console.log(res.data);
       })
       .catch((err) => {
         alert(err.message);
-      })
-  }
+      });
+  };
 
-  async function getProcessing(){
-    await axios.get("http://localhost:8070/pendingStock/status/"+ "Processing")
-    .then((res) => {
+  async function getProcessing() {
+    await axios
+      .get('http://localhost:8070/pendingStock/status/' + 'Processing')
+      .then((res) => {
         setProcessing(res.data); //setStock is used to update the state variable
         console.log(res.data);
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         alert(err.message);
-    })
+      });
   }
 
-  async function getResolved(){
-    await axios.get("http://localhost:8070/pendingStock/status/"+ "Resolved")
-    .then((res) => {
+  async function getResolved() {
+    await axios
+      .get('http://localhost:8070/pendingStock/status/' + 'Resolved')
+      .then((res) => {
         setResolved(res.data); //setStock is used to update the state variable
         console.log(res.data);
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         alert(err.message);
-    })
+      });
   }
 
-  async function getOrders(){
-    await axios.get("http://localhost:8070/production/order/allOrders").then((res)=>{
+  async function getOrders() {
+    await axios
+      .get('http://localhost:8070/production/order/allOrders')
+      .then((res) => {
         setOrder(res.data);
-    }).catch((err)=>{
+      })
+      .catch((err) => {
         alert(err.message);
-    })
-}
+      });
+  }
 
-  useEffect(() => { //useEffect is used to call the function getdamagedStock
+  useEffect(() => {
+    //useEffect is used to call the function getdamagedStock
     getStockUtil();
     getOrders();
     getProcessing();
@@ -77,25 +100,26 @@ const StockUtilisationDashboard = () => {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
-  }, [])
+  }, []);
 
   const itemCount = stockUtil.length;
   const additions = stockUtil.filter((stk) => stk.type === 'Additions').length;
   const issues = stockUtil.filter((stk) => stk.type === 'Issues').length;
-  
-  const requested= Order.filter((Order) => Order.status == 'Stock Requested').length;
+
+  const requested = Order.filter(
+    (Order) => Order.status == 'Stock Requested'
+  ).length;
 
   const processCnt = processing.length;
   const resolveCnt = resolved.length;
 
   return (
     <div>
-
       <div className={currentMode === 'Dark' ? 'dark' : ''}>
-
         <div className="flex relative dark:bg-main-dark-bg">
-
-          <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}> {/* THEME SETTINGS BUTTON */}
+          <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            {' '}
+            {/* THEME SETTINGS BUTTON */}
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
@@ -108,7 +132,6 @@ const StockUtilisationDashboard = () => {
             </TooltipComponent>
           </div>
 
-
           {activeMenu ? ( // SIDEBAR IMPLEMENTATION
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
               <Sidebar />
@@ -120,13 +143,13 @@ const StockUtilisationDashboard = () => {
           )}
 
           <div
-            className={ // MAIN BACKGROUND IMPLEMENTATION
+            className={
+              // MAIN BACKGROUND IMPLEMENTATION
               activeMenu
                 ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
-
             {/* NAVBAR IMPLEMENTATION */}
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
@@ -135,52 +158,77 @@ const StockUtilisationDashboard = () => {
             <div>
               {themeSettings && <ThemeSettings />}
               <div>
-
                 <div className="mt-5">
-
                   <div className="flex flex-wrap lg:flex-nowrap justify-left ml-5 mt-5">
                     <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-                      {/* top buttons in the dashboard */} {/* use for navigation buttons*/}
+                      {/* top buttons in the dashboard */}{' '}
+                      {/* use for navigation buttons*/}
                       <Link to="/StockUtilisation">
-                        <DashTopButton icon={<FaChartBar />} value="View All Stocks Transactions" />
+                        <DashTopButton
+                          icon={<FaChartBar />}
+                          value="View All Stocks Transactions"
+                        />
                       </Link>
-
                       <Link to="/StockUtilAddOption">
-                        <DashTopButton icon={<FaLayerGroup />} value="Add New Entry for existing stock" />
+                        <DashTopButton
+                          icon={<FaLayerGroup />}
+                          value="Add New Entry for existing stock"
+                        />
                       </Link>
-
                       <Link to="/PendingStockAdd">
-                        <DashTopButton icon={<FaInbox />} value="Add new stock purchase request" />
+                        <DashTopButton
+                          icon={<FaInbox />}
+                          value="Add new stock purchase request"
+                        />
                       </Link>
-
                     </div>
                   </div>
 
                   <div className="flex flex-wrap lg:flex-nowrap justify-center mt-5">
                     <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-                      {/* small top boxes in the dashboard */} {/* use minimum 3, maximum 5 */}
-                      
-                      <Link to ="/StockUtilisation">
-                      <DashTopBox icon={<FaFileAlt />} label="Total Records " data={itemCount} />                        </Link>
-
-                      <Link to ="/PendingStockRequisitions">
-                        <DashTopBox icon={<FaGetPocket />} label="Stock Requisitions" data={requested} />
-                        </Link>
-
-                        <Link to="/ProcessingRequest">
-                        <DashTopBox icon={<FaHourglassHalf />} label="Processing" data={processCnt} />
+                      {/* small top boxes in the dashboard */}{' '}
+                      {/* use minimum 3, maximum 5 */}
+                      <Link to="/StockUtilisation">
+                        <DashTopBox
+                          icon={<FaFileAlt />}
+                          label="Total Records "
+                          data={itemCount}
+                        />{' '}
                       </Link>
-
+                      <Link to="/PendingStockRequisitions">
+                        <DashTopBox
+                          icon={<FaGetPocket />}
+                          label="Stock Requisitions"
+                          data={requested}
+                        />
+                      </Link>
+                      <Link to="/ProcessingRequest">
+                        <DashTopBox
+                          icon={<FaHourglassHalf />}
+                          label="Processing"
+                          data={processCnt}
+                        />
+                      </Link>
                       <Link to="/ResolvedRequest">
-                        <DashTopBox icon={<BiCheckCircle />} label="Resolved" data={resolveCnt} />
+                        <DashTopBox
+                          icon={<BiCheckCircle />}
+                          label="Resolved"
+                          data={resolveCnt}
+                        />
                       </Link>
-
                       <Link to="/ViewAllAdditions">
-                        <DashTopBox icon={<AiOutlineStock />} label="Additions" data={additions} />
+                        <DashTopBox
+                          icon={<AiOutlineStock />}
+                          label="Additions"
+                          data={additions}
+                        />
                       </Link>
-
                       <Link to="/ViewAllIssues">
-                        <DashTopBox icon={<AiOutlineStock />} label="Issues" data={issues} />
+                        <DashTopBox
+                          icon={<AiOutlineStock />}
+                          label="Issues"
+                          data={issues}
+                        />
                       </Link>
                       {/* <DashTopBox icon={<GiRolledCloth />} label="Total Raw Materials" data={countRawMaterials} />
     <DashTopBox icon={<GiSewingNeedle />} label="Total Work in progress" data={countWorkInProgress} />
@@ -191,13 +239,11 @@ const StockUtilisationDashboard = () => {
                   <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl  dark:bg-secondary-dark-bg dark:text-white ">
                     <StockUtilLineChart />
                   </div>
-                  
+
                   <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl  dark:bg-secondary-dark-bg dark:text-white ">
                     <StockUtilPieChart />
                   </div>
-
                 </div>
-
               </div>
               <Footer />
             </div>

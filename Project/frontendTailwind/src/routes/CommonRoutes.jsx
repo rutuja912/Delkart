@@ -4,12 +4,10 @@ import UserLogin from '../pages/UserLogin';
 
 function CommonRoutes() {
   return (
-
-      <Routes>
-        {/* Common dashboard */}
-        <Route path="/" element={<EmployeeDashboard />} />
-      </Routes>
-
+    <Routes>
+      {/* Common dashboard */}
+      <Route path="/" element={<EmployeeDashboard />} />
+    </Routes>
   );
 }
 

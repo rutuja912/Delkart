@@ -7,7 +7,8 @@ import { themeColors } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const ThemeSettings = () => {
-  const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
+  const { setColor, setMode, currentMode, currentColor, setThemeSettings } =
+    useStateContext();
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
@@ -22,7 +23,6 @@ const ThemeSettings = () => {
           >
             <MdOutlineCancel />
           </button>
-
         </div>
         <div className="flex-col border-t-1 border-color p-4 ml-4">
           <p className="font-semibold text-xl ">Theme Option</p>
@@ -62,7 +62,11 @@ const ThemeSettings = () => {
           <p className="font-semibold text-xl ">Theme Colors</p>
           <div className="flex gap-3">
             {themeColors.map((item, index) => (
-              <TooltipComponent key={index} content={item.name} position="TopCenter">
+              <TooltipComponent
+                key={index}
+                content={item.name}
+                position="TopCenter"
+              >
                 <div
                   className="relative mt-2 cursor-pointer flex gap-5 items-center"
                   key={item.name}
@@ -73,7 +77,9 @@ const ThemeSettings = () => {
                     style={{ backgroundColor: item.color }}
                     onClick={() => setColor(item.color)}
                   >
-                    <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`} />
+                    <BsCheck
+                      className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`}
+                    />
                   </button>
                 </div>
               </TooltipComponent>

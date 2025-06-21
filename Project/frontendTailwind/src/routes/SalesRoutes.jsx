@@ -1,6 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { SalesDashboard, SalesPreview, SalesViewAll, SalesUpdate, SalesNew, SalesInvoice } from '../pages/Sales';
+import {
+  SalesDashboard,
+  SalesPreview,
+  SalesViewAll,
+  SalesUpdate,
+  SalesNew,
+  SalesInvoice,
+} from '../pages/Sales';
 
 function SalesRoutes() {
   return (

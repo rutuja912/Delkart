@@ -4,7 +4,7 @@ export { default as StockInformation } from './StocksInformation';
 export { default as StockAdd } from './StockAdd';
 export { default as StockUpdate } from './StockUpdate';
 export { default as StockPDF } from './StockPDF';
-export { default as ViewAllRawMaterials} from './ViewAllRawMaterials';
+export { default as ViewAllRawMaterials } from './ViewAllRawMaterials';
 export { default as RawMaterialsReport } from './RawMaterialsReport';
 export { default as ViewAllWorkInProgress } from './ViewAllWorkInProgress';
 export { default as WorkInProgressReport } from './WorkInProgressReport';
