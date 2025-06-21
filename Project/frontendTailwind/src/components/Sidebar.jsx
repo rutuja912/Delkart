@@ -24,7 +24,7 @@ import {
 } from 'react-icons/tb';
 import { FaHouseDamage, FaRegMoneyBillAlt, FaChartLine } from 'react-icons/fa';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logo from '../data/logo.png';
+import logo from '../data/logo.svg';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -99,7 +99,7 @@ const Sidebar = () => {
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
               <FiCalendar /> {/*  icon  */}
-              <span className="capitalize ">Attendace and leaves</span>{' '}
+              <span className="capitalize ">Attendance and leaves</span>{' '}
               {/*  link name  */}
             </NavLink>
 
