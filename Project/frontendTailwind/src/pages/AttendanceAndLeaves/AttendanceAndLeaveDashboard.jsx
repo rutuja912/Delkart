@@ -31,6 +31,7 @@ import TableHeader from '../../components/Table/TableHeader';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { useNavigate } from 'react-router-dom';
 
 const AttendanceAndLeaveDashboard = () => {
   const {

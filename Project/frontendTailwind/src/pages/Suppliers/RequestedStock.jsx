@@ -9,6 +9,7 @@ import TableHeader from '../../components/Table/TableHeader';
 import { FiSettings } from 'react-icons/fi';
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { useNavigate } from 'react-router-dom';
 
 function RequestedStock() {
   const {

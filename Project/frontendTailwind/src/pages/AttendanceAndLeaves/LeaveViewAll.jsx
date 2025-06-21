@@ -16,6 +16,7 @@ import TableHeader from '../../components/Table/TableHeader';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+import { useNavigate } from 'react-router-dom';
 
 const LeaveViewAll = () => {
   const {

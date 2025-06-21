@@ -14,6 +14,7 @@ import TableHeader from '../../components/Table/TableHeader';
 import { FiSettings, FiFilePlus } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const CustomerViewAll = () => {
   const {

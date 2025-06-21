@@ -15,6 +15,7 @@ import {
   ThemeSettings,
 } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { useNavigate } from 'react-router-dom';
 
 const FinanceViewAll = () => {
   const {
