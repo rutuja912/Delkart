@@ -194,7 +194,7 @@ const StockInformation = () => {
                           stockUtilData.firstPurchaseDate ===
                             data.firstPurchaseDate
                       )
-                      .map((stockUtilData) => {
+                      .forEach((stockUtilData) => {
                         (totAdds += stockUtilData.quantity),
                           (lastAdd = stockUtilData.date.split('T')[0]);
                         price = stockUtilData.unitPrice;
@@ -209,7 +209,7 @@ const StockInformation = () => {
                           stockUtilData.firstPurchaseDate ===
                             data.firstPurchaseDate
                       )
-                      .map((stockUtilData) => {
+                      .forEach((stockUtilData) => {
                         (totIssues += stockUtilData.quantity),
                           (lastIssue = stockUtilData.date.split('T')[0]);
                       });
