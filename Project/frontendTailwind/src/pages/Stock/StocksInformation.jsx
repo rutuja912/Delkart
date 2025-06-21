@@ -31,15 +31,15 @@ const StockInformation = () => {
 
   const [stock, setStock] = useState([]);
   const [stockUtil, setStockUtil] = useState([]);
-  var [temp, setTemp] = useState('');
-  var [totAdds] = useState('');
-  var [totIssues] = useState('');
-  var quantity = 0;
+  const [temp, setTemp] = useState('');
+  const [totAdds] = useState('');
+  const [totIssues] = useState('');
+  let quantity = 0;
   let totalValue = 0;
   let lastIssue = 0;
   let lastAdd = 0;
   let code = 0;
-  var price = 0;
+  let price = 0;
 
   const { id } = useParams(); // get the id from the url
 
@@ -185,45 +185,41 @@ const StockInformation = () => {
                   let totalValue = 0;
                   code = data.stockCode;
 
-                  
-                    stockUtil
-                      .filter(
-                        (stockUtilData) =>
-                          stockUtilData.type == 'Additions' &&
-                          stockUtilData.stockCode == data.stockCode &&
-                          stockUtilData.firstPurchaseDate ===
-                            data.firstPurchaseDate
-                      )
-                      .forEach((stockUtilData) => {
-                        (totAdds += stockUtilData.quantity),
-                          (lastAdd = stockUtilData.date.split('T')[0]);
-                        price = stockUtilData.unitPrice;
-                      });
-                  
-              
-                    stockUtil
-                      .filter(
-                        (stockUtilData) =>
-                          stockUtilData.type === 'Issues' &&
-                          stockUtilData.stockCode == data.stockCode &&
-                          stockUtilData.firstPurchaseDate ===
-                            data.firstPurchaseDate
-                      )
-                      .forEach((stockUtilData) => {
-                        (totIssues += stockUtilData.quantity),
-                          (lastIssue = stockUtilData.date.split('T')[0]);
-                      });
-                  
-                    quantity = totAdds - totIssues - data.damagedQty;
-
-                    totalValue = price * quantity;
-
+                  // Fixed: Separated the comma operators into proper statements
+                  stockUtil
+                    .filter(
+                      (stockUtilData) =>
+                        stockUtilData.type == 'Additions' &&
+                        stockUtilData.stockCode == data.stockCode &&
+                        stockUtilData.firstPurchaseDate ===
+                          data.firstPurchaseDate
+                    )
+                    .forEach((stockUtilData) => {
+                      totAdds += stockUtilData.quantity;
+                      lastAdd = stockUtilData.date.split('T')[0];
+                      price = stockUtilData.unitPrice;
+                    });
+            
+                  // Fixed: Separated the comma operators into proper statements
+                  stockUtil
+                    .filter(
+                      (stockUtilData) =>
+                        stockUtilData.type === 'Issues' &&
+                        stockUtilData.stockCode == data.stockCode &&
+                        stockUtilData.firstPurchaseDate ===
+                          data.firstPurchaseDate
+                    )
+                    .forEach((stockUtilData) => {
+                      totIssues += stockUtilData.quantity;
+                      lastIssue = stockUtilData.date.split('T')[0];
+                    });
+                
+                  quantity = totAdds - totIssues - data.damagedQty;
+                  totalValue = price * quantity;
 
                   if (quantity < 0) {
                       quantity = 'No usable stocks left';
-
                       totalValue = 0;
-
                   }
 
                   let datacolor = 'text-black';
@@ -236,7 +232,7 @@ const StockInformation = () => {
                   }
 
                   return (
-                    <div id="report">
+                    <div id="report" key={data.stockCode}>
                       <div className="bg-main-bg dark:bg-main-dark-bg rounded-3xl p-5 m-5">
                         <h1 className="text-2xl font-bold">Stock Details</h1>
                         <div className="text-md ml-12 pt-5">
@@ -312,7 +308,7 @@ const StockInformation = () => {
                         <div className="text-md ml-12 pt-5">
                           <div className="p-1">
                             <span className="font-bold"> Quantity </span> :
-                            {quantity}
+                            <span className={datacolor}> {quantity}</span>
                           </div>
                           <div className="p-1">
                             <span className="font-bold">Unit price</span> :{' '}
@@ -320,7 +316,7 @@ const StockInformation = () => {
                           </div>
                           <div className="p-1">
                             <span className="font-bold">Total value</span> :
-                            {formatter.format(quantity * price)}
+                            {formatter.format(totalValue)}
                           </div>
                         </div>
                       </div>
