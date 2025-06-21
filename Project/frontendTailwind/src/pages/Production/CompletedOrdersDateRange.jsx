@@ -10,6 +10,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from 'react-icons/fi';
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import Swal from 'sweetalert2';
 
 export default function CompletedOrdersDateRange() {
   const location = useLocation();
@@ -95,12 +96,22 @@ export default function CompletedOrdersDateRange() {
   }
 
   const confirmFunc = (id) => {
-    if (confirm('Do you want to delete?') == true) {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'This action will delete the order.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!',
+  }).then((result) => {
+    if (result.isConfirmed) {
       deletesOrder(id);
     } else {
       navigate('/completedOrders');
     }
-  };
+  });
+};
 
   return (
     <div>

@@ -59,7 +59,7 @@ function ResolvedRequestPDF() {
     });
   };
 
-  downloadConf = () => {
+  const downloadConf = () => {
     Swal.fire({
       title: 'Downloading!',
       text: 'Your download has begun!',

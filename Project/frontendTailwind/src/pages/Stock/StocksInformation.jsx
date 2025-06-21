@@ -214,21 +214,16 @@ const StockInformation = () => {
                           (lastIssue = stockUtilData.date.split('T')[0]);
                       });
                   }
-
-                  {
                     quantity = totAdds - totIssues - data.damagedQty;
-                  }
-                  {
+
                     totalValue = price * quantity;
-                  }
+
 
                   if (quantity < 0) {
-                    {
                       quantity = 'No usable stocks left';
-                    }
-                    {
+
                       totalValue = 0;
-                    }
+
                   }
 
                   let datacolor = 'text-black';

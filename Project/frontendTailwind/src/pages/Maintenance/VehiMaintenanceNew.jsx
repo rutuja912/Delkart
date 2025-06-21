@@ -95,7 +95,6 @@ function VehiMaintenanceNew() {
                         const newMaintenance = {
                           mainID,
                           vehicleNo,
-                          name,
                           mileage,
                           Description,
                           lastMaintainedDate,

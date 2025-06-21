@@ -54,13 +54,24 @@ function AttendanceNew() {
   const [employeeNumber, setEmployeeNumber] = useState('');
   const [employeeInTime, setEmployeeInTime] = useState('');
   const [attendanceStatus, setAttendanceStatus] = useState('');
-
   var date = new Date();
   var currentDateTime = new Date(
     date.getTime() - date.getTimezoneOffset() * 60000
-  )
-    .toISOString()
-    .slice(0, -8);
+  ).toISOString().slice(0, -8);
+
+   const autoCompleteForm = () => {
+  // If employee list is not empty, pick the first employee as an example
+  if (employee.length > 0) {
+    setEmployeeNumber(employee[0].employeeNumber);
+  } else {
+    setEmployeeNumber('EMP001'); // fallback
+  }
+
+  setEmployeeInTime(currentDateTime);
+  setAttendanceStatus('In');
+};
+
+ 
 
   return (
     <div>

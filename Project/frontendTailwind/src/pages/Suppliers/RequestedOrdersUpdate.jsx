@@ -32,7 +32,7 @@ function RequestedOrdersUpdate() {
   var [date, setDate] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [stock, setStock] = useState([]);
-  var firstPurchaseDate = null;
+  const [firstPurchaseDate, setFirstPurchaseDate] = useState(null);
   var totalValue = 0;
   var minDate = null;
   var status = null;

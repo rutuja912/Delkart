@@ -10,6 +10,8 @@ import { FiSettings } from 'react-icons/fi';
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 function RequestedStock() {
   const {
@@ -65,12 +67,25 @@ function RequestedStock() {
   }, []);
 
   const confirmFunc = (id) => {
-    if (confirm('Do you want to delete?') == true) {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'Do you want to delete?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'Cancel',
+    background: '#6c757d',
+    color: '#f8f9fa',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+  }).then((result) => {
+    if (result.isConfirmed) {
       deletePendingStock(id);
     } else {
       navigate('/PendingStockView');
     }
-  };
+  });
+};
 
   return (
     <div>
