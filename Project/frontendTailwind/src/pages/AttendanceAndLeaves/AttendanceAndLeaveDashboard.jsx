@@ -42,6 +42,7 @@ const AttendanceAndLeaveDashboard = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+const navigate = useNavigate();
 
   const [employee, setEmployee] = useState([]);
   const [attendance, setAttendance] = useState([]);

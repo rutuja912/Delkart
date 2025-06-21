@@ -24,6 +24,7 @@ const PendingOrders = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const navigate = useNavigate();
 
   const [sales, setSale] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

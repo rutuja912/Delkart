@@ -20,6 +20,7 @@ function RequestedStock() {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const navigate = useNavigate();
 
   const [pendingStock, setPendingStock] = useState([]); //stock is the state variable and setStock is the function to update the state variable
   const [searchTerm, setSearchTerm] = useState('');

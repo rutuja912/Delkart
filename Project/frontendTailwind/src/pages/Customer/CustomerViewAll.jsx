@@ -25,6 +25,7 @@ const CustomerViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+const navigate = useNavigate();
 
   const [customer, setCustomer] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

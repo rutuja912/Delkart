@@ -26,6 +26,7 @@ const FinanceViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const navigate = useNavigate();
 
   const [Salary, setSalary] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

@@ -27,6 +27,7 @@ const LeaveViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+const navigate = useNavigate();
 
   const [leave, setLeave] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); //add this state to save filter word

@@ -27,6 +27,7 @@ const AttendanceViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+const navigate = useNavigate();
 
   const [attendance, setAttendance] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); //add this state to save filter word

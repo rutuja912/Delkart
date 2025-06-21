@@ -26,6 +26,7 @@ const EmployeeViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+const navigate = useNavigate();
 
   const [employee, setEmployee] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); //add this state to save filter word

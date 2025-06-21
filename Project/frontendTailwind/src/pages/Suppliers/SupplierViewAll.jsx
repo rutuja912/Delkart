@@ -21,6 +21,7 @@ const SupplierViewAll = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const navigate = useNavigate();
 
   const [supplier, setSupplier] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');

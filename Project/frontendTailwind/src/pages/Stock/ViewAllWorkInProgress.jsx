@@ -20,6 +20,7 @@ function ViewAllWorkInProgress() {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const navigate = useNavigate();
 
   const [stock, setStock] = useState([]); //stock is the state variable and setStock is the function to update the state variable
   const [stockUtil, setStockUtil] = useState([]);
