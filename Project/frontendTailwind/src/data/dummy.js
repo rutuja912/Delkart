@@ -1,15 +1,14 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
+import { FiShoppingBag, FiPieChart, FiBarChart, FiCreditCard, FiUsers, FiGrid, FiCalendar, FiDollarSign } from 'react-icons/fi';
+import { BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
-import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
+// import your icons below
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -21,18 +20,15 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
 
-/*OUR IMPORTS*/
-import { FiUsers, FiBarChart2, FiGrid, FiCalendar, FiDollarSign} from 'react-icons/fi'; // import your icons below
+/* OUR IMPORTS */
 
-/*OUR DATA BEGINS
+/* OUR DATA BEGINS
 ************************************************************************************************************************************
 ************************************************************************************************************************************
 ************************************************************************************************************************************
 ************************************************************************************************************************************
 */
-
 
 export const links = [
   {
@@ -68,7 +64,7 @@ export const links = [
         name: 'Damaged Stocks',
         icon: <FiShoppingBag />,
       },
-    ], 
+    ],
   },
 
   {
@@ -223,14 +219,13 @@ export const links = [
   },
 ];
 
-
 // Data for the small boxes in the dashboard
 // max 5 boxes // min 3 boxes
 export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />, // Change icons
     amount: '10', // need a function to calculate the value
-    title: 'Employees', //change title
+    title: 'Employees', // change title
   },
   {
     icon: <BsBoxSeam />,
@@ -254,7 +249,7 @@ export const earningData = [
   },
 ];
 
-/*OUR DATA ENDS
+/* OUR DATA ENDS
 ************************************************************************************************************************************
 ************************************************************************************************************************************
 ************************************************************************************************************************************
@@ -762,12 +757,6 @@ export const chatData = [
   },
 ];
 
-
-
-
-
-
-
 export const productsPerformance = [
   {
     image:
@@ -806,8 +795,6 @@ export const productsPerformance = [
     earningAmount: '$123,000',
   },
 ];
-
-
 
 export const themeColors = [
   {

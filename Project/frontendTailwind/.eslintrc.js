@@ -16,8 +16,19 @@ module.exports = {
   },
   plugins: [
     'react',
+    'unused-imports', // ✅ Add this line
   ],
   rules: {
+    // ✅ Auto-remove unused imports
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },],
     'react/function-component-definition': 0,
     'import/extensions': 0,
     'react/prop-types': 0,
