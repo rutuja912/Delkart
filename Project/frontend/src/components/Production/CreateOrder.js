@@ -29,7 +29,7 @@ export default function AddOrder(){
                         overHeadCost,
                 }
                 console.log(newOrder);
-                await axios.post("http://localhost:8070/production/order/orderCreate",newOrder).then(()=>{
+                await axios.post(`${process.env.REACT_APP_API_URL}/production/order/orderCreate`,newOrder).then(()=>{
                     alert("Order Created");
                 }).catch((error)=>{
                     console.log(error);

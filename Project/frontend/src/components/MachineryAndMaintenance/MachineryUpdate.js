@@ -20,7 +20,7 @@ function MachineryUpdate() {
     const {id} = useParams(); //get the id from the url
 
     const getMachinery = () => {
-        axios.get(`http://localhost:8070/machinery/${id}`)//get the data from the backend
+        axios.get(`${process.env.REACT_APP_API_URL}machinery/${id}`)//get the data from the backend
         .then((res) => {
             setMachineID(res.data.machineID);
             setName(res.data.name);
@@ -57,7 +57,7 @@ function MachineryUpdate() {
                     others
                   }
 
-                  await axios.put("http://localhost:8070/machinery/update/"+ id, newMachine)
+                  await axios.put(`${process.env.REACT_APP_API_URL}/machinery/update/`+ id, newMachine)
                       .then((res)=>{
                           alert("Data updated successfully");
                           //navigate to the machinery view page

@@ -33,7 +33,7 @@ import {useNavigate} from 'react-router-dom';
                    
                   }
 
-                   axios.post("http://localhost:8070/machinery/create", newMachine)
+                   axios.post(`${process.env.REACT_APP_API_URL}/machinery/create`, newMachine)
                       .then(()=>{
                           alert("Data saved successfully");
                              //navigate to the machinery view page

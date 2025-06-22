@@ -37,7 +37,7 @@ function DamagedStockAddForm() {
                         totalValue,
                         usability
                     }
-                    await axios.post("http://localhost:8070/damagedStock/create", newDamagedStock).then((res) => {
+                    await axios.post(`${process.env.REACT_APP_API_URL}/damagedStock/create`, newDamagedStock).then((res) => {
                         alert("Data saved successfully");
                         navigate('/damagedStock');
 

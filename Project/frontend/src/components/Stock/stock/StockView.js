@@ -10,7 +10,7 @@ function StockView() {
     const [searchTerm, setSearchTerm] = useState("");
 
     const getStock = async () => {  //getStock is the function to get the data from the backend
-        axios.get("http://localhost:8070/stock")
+        axios.get(`${process.env.REACT_APP_API_URL}/stock`)
             .then((res) => {
                 setStock(res.data); //setStock is used to update the state variable
                 console.log(res.data);
@@ -21,7 +21,7 @@ function StockView() {
     }
 
     const deleteStock = async (id) => {
-        await axios.delete('http://localhost:8070/stock/delete/' + id)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/stock/delete/` + id)
             .then(() => {
                 alert("Data deleted successfully");
                 getStock();

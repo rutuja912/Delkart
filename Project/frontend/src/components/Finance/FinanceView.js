@@ -7,7 +7,7 @@ function FinanceView(){
     const [searchTerm, setSearchTerm] = useState("");
 
     const getFinance = async () => {
-        axios.get("http://localhost:8070/finance/")
+        axios.get(`${process.env.REACT_APP_API_URL}/finance/`)
         .then((res) => {
             setFinance(res.data);
 
@@ -23,7 +23,7 @@ function FinanceView(){
 
 
     const deleteFinance = async (id) => {
-        await axios.delete(`http://localhost:8070/finance/delete/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/finance/delete/${id}`)
         .then((res) => {
             alert("Data Deleted Successfully");
             getFinance();

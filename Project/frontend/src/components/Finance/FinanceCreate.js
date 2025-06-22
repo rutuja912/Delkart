@@ -23,7 +23,7 @@ export default function FinanceCreate(){
                 recordedDate
                } 
 
-               await axios.post("http://localhost:8070/finance/add", newFinanceData)
+               await axios.post(`${process.env.REACT_APP_API_URL}/finance/add`, newFinanceData)
                 .then((res) => {
                     alert("Data Added Successfully!")
                 })

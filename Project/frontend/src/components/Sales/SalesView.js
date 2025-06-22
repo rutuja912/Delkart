@@ -7,7 +7,7 @@ function SalesView() {
     const [sales, setSale] = useState([]); ////sales is the state variable and setSales is the function to update the state variable
    
     const getSale = async () => {       //getSale is the function to get the data from the backend
-            axios.get("http://localhost:8070/sales/")
+            axios.get(`${process.env.REACT_APP_API_URL}/sales/`)
             .then((res) => {
                     setSale(res.data);  //setSale is used to update the state variable
         })
@@ -21,7 +21,7 @@ function SalesView() {
     }, [])
 
     const deleteSale = async (id) => {
-        await axios.delete(`http://localhost:8070/sales/delete/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/sales/delete/${id}`)
         .then((res) => {
             alert("Deleted Successfully");
             getSale();

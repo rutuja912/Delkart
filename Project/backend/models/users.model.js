@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema(
     role: {
       type: String,
       required: true,
-      default: 'Administrator',
+      default: 'Sales Manager',
     },
   },
   {

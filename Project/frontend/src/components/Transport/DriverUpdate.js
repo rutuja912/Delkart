@@ -17,7 +17,7 @@ const DriverUpdate = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/driver/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/driver/${id}`)
       .then((res) => {
         setNic(res.data.nic);
         setFirstName(res.data.firstName);
@@ -50,7 +50,7 @@ const DriverUpdate = () => {
           };
 
           await axios
-            .put('http://localhost:8070/driver/update/' + id, newDriver)
+            .put(`${process.env.REACT_APP_API_URL}/driver/update/` + id, newDriver)
             .then((res) => {
               alert('Driver Details Updated');
               navigate('/driver');

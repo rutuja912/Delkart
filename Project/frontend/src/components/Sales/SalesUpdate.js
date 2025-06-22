@@ -17,7 +17,7 @@ function SalesUpdate() {
     const {id} = useParams();    //get the id from the url
 
     useEffect(() => { 
-      axios.get(`http://localhost:8070/sales/${id}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/sales/${id}`)
       .then(res => {
         setInvoice(res.data.invoiceNo);
         setOrderDate(res.data.orderDate);
@@ -67,7 +67,7 @@ function SalesUpdate() {
                     
                   };
 
-                  await axios.put(`http://localhost:8070/sales/update/` + id, newOrder)
+                  await axios.put(`${process.env.REACT_APP_API_URL}/sales/update/` + id, newOrder)
                       .then((res)=>{
                           alert("Order Details Updated!");
                           //navigate to the sales view page

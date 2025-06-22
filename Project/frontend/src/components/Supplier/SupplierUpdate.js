@@ -21,7 +21,7 @@ function SupplierUpdate () {
 
     const getSupplier = () => {
 
-        axios.get(`http://localhost:8070/supplier/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/supplier/${id}`)
         .then((res) => {
             setCompanyname(res.data.companyname);
             setContactPerson(res.data.contactPerson);
@@ -61,7 +61,7 @@ function SupplierUpdate () {
                     orderCapacity,
                 }
 
-                await axios.put("http://localhost:8070/supplier/update/" + id, updatedSupplier)
+                await axios.put(`${process.env.REACT_APP_API_URL}/supplier/update/` + id, updatedSupplier)
                 .then((res) => {
                     alert("Supplier details updated successfully");
                     navigate("/supplier");

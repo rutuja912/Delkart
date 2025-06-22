@@ -9,7 +9,7 @@ function MaintainenceView() {
     var TotalCost = 0;
 
     const getMaintainence = async () => {  //getMaintainence is the function to get the data from the backend
-        axios.get("http://localhost:8070/maintainence/")
+        axios.get(`${process.env.REACT_APP_API_URL}/maintainence/`)
         .then((res) => { 
             setMaintainence (res.data); //setMaintainence  is used to update the state variable
         })
@@ -23,7 +23,7 @@ function MaintainenceView() {
     }, [])
 
     const deleteMaintainence  = async (id) => {
-        await axios.delete(`http://localhost:8070/maintainence/delete/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/maintainence/delete/${id}`)
         .then((res) => {
             alert("Data deleted successfully");
             getMaintainence ();

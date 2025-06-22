@@ -39,7 +39,7 @@ function StockAddForm() {
                     }
 
                     console.log(newStock)
-                    await axios.post("http://localhost:8070/stock/create", newStock).then(() => {
+                    await axios.post(`${process.env.REACT_APP_API_URL}/stock/create`, newStock).then(() => {
                         alert("Data saved successfully");
                         navigate('/stock');
 

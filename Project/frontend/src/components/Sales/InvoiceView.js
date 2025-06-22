@@ -22,7 +22,7 @@ function InvoiceView() {
     const {id} = useParams();    //get the id from the url
 
     useEffect(() => { 
-      axios.get(`http://localhost:8070/sales/${id}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/sales/${id}`)
       .then(res => {
         setInvoice(res.data.invoiceNo);
         setOrderDate(res.data.orderDate);

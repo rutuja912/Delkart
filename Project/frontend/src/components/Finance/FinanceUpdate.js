@@ -13,7 +13,7 @@ export default function FinanceUpdate(){
     const {id} = useParams();
 
     const getFinance = () => {
-        axios.get(`http://localhost:8070/finance/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/finance/${id}`)
         .then((res) => {
             setRevenue(res.data.revenue);
             setExpenses(res.data.expenses);
@@ -39,7 +39,7 @@ export default function FinanceUpdate(){
                         recordedDate
                     }
 
-                    await axios.put("http://localhost:8070/finance/update/" + id, newFinance)
+                    await axios.put(`${process.env.REACT_APP_API_URL}/finance/update/` + id, newFinance)
                     //update function avoids .then and goes to the catch block, so the success message is displayed on both try and catch
                     .then((res) => {
                         alert("Data Updated Successfully");

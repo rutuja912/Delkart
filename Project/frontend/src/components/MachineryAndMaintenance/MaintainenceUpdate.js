@@ -19,7 +19,7 @@ function MaintainenceUpdate() {
     const {id} = useParams(); //get the id from the url
 
     const getMaintainence = () => {
-        axios.get(`http://localhost:8070/maintainence/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/maintainence/${id}`)
         .then((res) => {
 
 
@@ -61,7 +61,7 @@ function MaintainenceUpdate() {
 
                   }
 
-                  await axios.put("http://localhost:8070/maintainence/update/"+ id, newMaintainence)
+                  await axios.put(`${process.env.REACT_APP_API_URL}/maintainence/update/`+ id, newMaintainence)
                       .then((res)=>{
                           alert("Data updated successfully");
                           //navigate to the maintainence view page

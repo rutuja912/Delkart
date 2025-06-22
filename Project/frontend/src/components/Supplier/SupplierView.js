@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 function SupplierView(){
     const[supplier, setSupplier] = useState([]);
     const getSupplier = async () => {
-        axios.get("http://localhost:8070/supplier/")
+        axios.get(`${process.env.REACT_APP_API_URL}/supplier/`)
         .then((res) => { 
             setSupplier(res.data); 
         })
@@ -20,7 +20,7 @@ function SupplierView(){
     }, [])
 
     const deleteSupplier = async (id) => {
-        await axios.delete(`http://localhost:8070/supplier/delete/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/supplier/delete/${id}`)
         .then((res) => {
             alert("Data deleted successfully");
             getSupplier();

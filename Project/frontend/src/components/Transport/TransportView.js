@@ -8,7 +8,7 @@ const TransportView = () => {
   const getTransport = async () => {
     // getTransport is a function that is used to get the transport details from the database
     axios
-      .get('http://localhost:8070/transport/')
+      .get(`${process.env.REACT_APP_API_URL}/transport/`)
       .then((res) => {
         setTransport(res.data); // setTransport is a function that is used to set the transport details to the state variable
       })
@@ -24,7 +24,7 @@ const TransportView = () => {
 
   const deleteTransport = async (id) => {
     await axios
-      .delete(`http://localhost:8070/transport/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/transport/delete/${id}`)
       .then((res) => {
         alert('Transport Details Deleted');
         getTransport();

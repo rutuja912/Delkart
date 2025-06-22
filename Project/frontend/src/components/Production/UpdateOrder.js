@@ -19,7 +19,7 @@ export default function UpdateOrder(){
     
      const getOrder =()=>{
 
-        axios.get(`http://localhost:8070/production/order/${id}`).then((res)=>{
+        axios.get(`${process.env.REACT_APP_API_URL}/production/order/${id}`).then((res)=>{
             setInvoice(res.data.invoiceNo);
             setOrderName(res.data.orderName);
             setDate(res.data.date);
@@ -48,7 +48,7 @@ export default function UpdateOrder(){
             overhead
         }
         console.log(newOrder);
-        axios.put("http://localhost:8070/production/order/update/"+id,newOrder).then((res)=>{
+        axios.put(`${process.env.REACT_APP_API_URL}/production/order/update/`+id,newOrder).then((res)=>{
             alert("Order Created");
         }).catch((error)=>{
             console.log(error);

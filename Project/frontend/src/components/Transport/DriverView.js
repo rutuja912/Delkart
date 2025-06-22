@@ -7,7 +7,7 @@ const DriverView = () => {
   const [driver, setDriver] = useState([]); // useState is a hook that is used to create a state variable and a function to update it
   const getDriver = async () => {
     axios
-      .get('http://localhost:8070/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDriver(res.data);
       })
@@ -22,7 +22,7 @@ const DriverView = () => {
 
   const deleteDriver = async (id) => {
     await axios
-      .delete(`http://localhost:8070/driver/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/driver/delete/${id}`)
       .then((res) => {
         alert('Driver Details Deleted');
         getDriver();

@@ -32,7 +32,7 @@ const Driver = () => {
           };
 
           await axios
-            .post('http://localhost:8070/driver/create', newDriver)
+            .post(`${process.env.REACT_APP_API_URL}/driver/create`, newDriver)
             .then((res) => {
               alert('Driver Details Added');
               navigate('/driver');

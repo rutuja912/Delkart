@@ -36,7 +36,7 @@ const AddSupplierDetails = () => {
           };
 
           await axios
-            .post("http://localhost:8070/supplier/create", newSupplier)
+            .post(`${process.env.REACT_APP_API_URL}/supplier/create`, newSupplier)
             .then((res) => {
               alert("Supplier details added successfully");
               navigate("/supplier");

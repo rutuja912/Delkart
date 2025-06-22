@@ -7,7 +7,7 @@ export default function AllOrders(){
     const [Order,setOrder] = useState([])
 
         async function getOrders(){
-            await axios.get("http://localhost:8070/production/order/allOrders").then((res)=>{
+            await axios.get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`).then((res)=>{
                 setOrder(res.data);
             }).catch((err)=>{
                 alert(err.message);
@@ -27,7 +27,7 @@ export default function AllOrders(){
         };
 
         async function deletesOrder(id){
-            await axios.delete(`http://localhost:8070/production/order/delete/${id}`).then((res)=>{
+            await axios.delete(`${process.env.REACT_APP_API_URL}/production/order/delete/${id}`).then((res)=>{
                 alert("Order data deleted Successfully");
                getOrders();
             }).catch((err)=>{

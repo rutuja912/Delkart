@@ -35,7 +35,7 @@ import {useNavigate} from 'react-router-dom';
                     nextServiceDate
                   }
 
-                  await axios.post("http://localhost:8070/maintainence/create", newMachine)
+                  await axios.post(`${process.env.REACT_APP_API_URL}/maintainence/create`, newMachine)
                       .then((res)=>{
                           alert("Data saved successfully");
                           //navigate to the maintainence view page

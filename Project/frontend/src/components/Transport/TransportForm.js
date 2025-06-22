@@ -18,7 +18,7 @@ const Transport = () => {
 
   const getDrivers = async () => {
     axios
-      .get('http://localhost:8070/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDrivers(res.data);
       })
@@ -49,7 +49,7 @@ const Transport = () => {
           };
 
           await axios
-            .post('http://localhost:8070/transport/create', newTransport)
+            .post(`${process.env.REACT_APP_API_URL}/transport/create`, newTransport)
             .then((res) => {
               alert('Transport Details Added');
               navigate('/transport');

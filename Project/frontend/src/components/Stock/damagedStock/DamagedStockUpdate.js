@@ -22,7 +22,7 @@ function DamagedStockUpdate() {
     const { id } = useParams(); //get the id from the url
 
     const getDamagedStock = () => {
-        axios.get(`http://localhost:8070/damagedStock/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/damagedStock/${id}`)
             .then((res) => {
                 setStockCode(res.data.stockCode);
                 setDamagedStockName(res.data.damagedStockName);
@@ -67,7 +67,7 @@ function DamagedStockUpdate() {
                         usability
                     }
 
-                    await axios.put("http://localhost:8070/damagedStock/update/" + id, newDamagedStock)
+                    await axios.put(`${process.env.REACT_APP_API_URL}/damagedStock/update/` + id, newDamagedStock)
                         .then((res) => {
                             alert("Data updated successfully");
                             //navigate to the stock view page

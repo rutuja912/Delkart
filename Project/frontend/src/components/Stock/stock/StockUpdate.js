@@ -20,7 +20,7 @@ function StockUpdate() {
     const navigate = useNavigate();
 
     const getStock = () => {
-        axios.get("http://localhost:8070/stock/" + id).then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/stock/` + id).then((res) => {
             setStockCode(res.data.stockCode);
             setStockName(res.data.stockName);
             setStockCategory(res.data.stockCategory);
@@ -68,7 +68,7 @@ function StockUpdate() {
                         sufficientStock
                     }
 
-                    await axios.put("http://localhost:8070/stock/update/" + id, newStock)
+                    await axios.put(`${process.env.REACT_APP_API_URL}/stock/update/` + id, newStock)
                         .then((res) => {
                             alert("Data updated successfully");
                             console.log(newStock);

@@ -30,18 +30,20 @@ import userRoutes from './routes/userRoutes.js';
 const app = express();
 const PORT = process.env.PORT || 8070;
 
-//middlewear
-//app.use(cors());
-app.use(cors({
-  origin: [
-    'https://delkart.netlify.app', // Replace with your real Netlify URL
-    'http://localhost:3000'
-  ],
+// ✅ CORS configuration
+const corsOptions = {
+  origin: ['https://delkart.netlify.app', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // ✅ Handle preflight requests
+
 app.use(bodyParser.json());
+
+// ✅ Mount routers
 app.use('/machinery', machineryRouter);
 app.use('/maintainence', maintainenceRouter);
 app.use('/maintainenceVehicle', maintainenceVehicleRouter);
@@ -65,17 +67,17 @@ app.use('/welfareFacility', welfareFacilityRouter);
 app.use('/customer', customerRouter);
 app.use('/users', userRoutes);
 
+// ✅ Connect to MongoDB
 const URL = process.env.MONGODBURL;
 
-//connect to DB
 mongoose.connect(URL);
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log('mongodb connection is successful!!');
+  console.log('✅ MongoDB connection is successful!');
 });
 
-app.listen(PORT, '0.0.0.0',() => {
-  console.log(`server is up and running on ${PORT}`);
+// ✅ Start server
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
-
 

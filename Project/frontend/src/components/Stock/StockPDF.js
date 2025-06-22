@@ -12,7 +12,7 @@ function StockPDF  ()  {
     const [stock, setStock] = useState([]); //stock is the state variable and setStock is the function to update the state variable
 
     const getStock = async () => {  //getStock is the function to get the data from the backend
-        axios.get("http://localhost:8070/stock/")
+        axios.get(`${process.env.REACT_APP_API_URL}/stock/`)
             .then((res) => {
                 setStock(res.data); //setStock is used to update the state variable
             })

@@ -40,7 +40,7 @@ function SalesForm() {
                     status
                   }
                   
-                  await axios.post("http://localhost:8070/sales/create", newOrder)
+                  await axios.post(`${process.env.REACT_APP_API_URL}/sales/create`, newOrder)
                       .then((res)=>{
                           alert("Order saved successfully");
                              //navigate to the sales view page

@@ -19,7 +19,7 @@ const TransportUpdate = () => {
 
   const getDrivers = async () => {
     axios
-      .get('http://localhost:8070/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDrivers(res.data);
       })
@@ -34,7 +34,7 @@ const TransportUpdate = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/transport/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/transport/${id}`)
       .then((res) => {
         setType(res.data.type);
         setDestinationAddress(res.data.destinationAddress);
@@ -69,7 +69,7 @@ const TransportUpdate = () => {
           };
 
           await axios
-            .put('http://localhost:8070/transport/update/' + id, newTransport)
+            .put(`${process.env.REACT_APP_API_URL}/transport/update/` + id, newTransport)
             .then((res) => {
               alert('Transport Details Updated');
               navigate('/transport');
