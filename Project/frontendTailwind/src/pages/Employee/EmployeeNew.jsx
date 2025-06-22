@@ -448,7 +448,7 @@ function EmployeeCreateForm() {
                           onChange={(e) => {
                             setEmployeeEmail(e.target.value);
                           }}
-                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                           title={'The Email requires a valid email address'}
                         />
                       </div>
