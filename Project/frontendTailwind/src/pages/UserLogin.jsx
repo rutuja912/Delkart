@@ -20,7 +20,9 @@ function UserLogin() {
     console.log('Full URL:', `${process.env.REACT_APP_API_URL}/users/login`);
 
     try {
-      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, {
+      const apiUrl = process.env.REACT_APP_API_URL || 'https://delkart.onrender.com';
+
+      const { data } = await axios.post(`${apiUrl}/users/login`, {
         email,
         password,
       }, {

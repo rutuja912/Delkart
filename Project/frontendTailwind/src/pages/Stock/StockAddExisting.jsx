@@ -49,11 +49,11 @@ function StockAddExisting() {
   //     displayM = true;
   //     supplier  = "-";
   // }
-
+  const apiUrl = process.env.REACT_APP_API_URL || 'https://delkart.onrender.com';
   const getStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stock')
+      .get(`${apiUrl}/stock`)
       .then((res) => {
         setStock(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -67,7 +67,7 @@ function StockAddExisting() {
     //getStock is the function to get the data from the backend
     axios
       //.get('http://localhost:8070/stockUtilisation')
-        .get(`${process.env.REACT_APP_API_URL}/stockUtilisation`)
+        .get(`${apiUrl}/stockUtilisation`)
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log(res.data);
