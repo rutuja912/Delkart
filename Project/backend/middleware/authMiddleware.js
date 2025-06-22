@@ -11,12 +11,11 @@ const protect = asyncHandler(async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(' ')[1];
-
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       req.user = await User.findById(decoded.id).select('-password');
 
-      next();
+      return next(); // ✅ early return if successful
     } catch (error) {
       console.error(error);
       res.status(401);
@@ -24,10 +23,9 @@ const protect = asyncHandler(async (req, res, next) => {
     }
   }
 
-  if (!token) {
-    res.status(401);
-    throw new Error('Not authorized, no token');
-  }
+  // ✅ Only runs if no token or header present
+  res.status(401);
+  throw new Error('Not authorized, no token');
 });
 
 const role = (req, res, next) => {
