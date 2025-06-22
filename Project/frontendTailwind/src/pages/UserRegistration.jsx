@@ -246,7 +246,7 @@ function UserRegistration() {
                     password,
                     role,
                   };
-
+                  console.log('Submitting new user:', newUser);
                   await axios
                     .post(`${process.env.REACT_APP_API_URL}/users`, newUser)
                     .then((res) => {
