@@ -402,7 +402,7 @@ function EmployeeCreateForm() {
                           onChange={(e) => {
                             setEmployeeAddress(e.target.value);
                           }}
-                          pattern="[A-Za-z0-9 ,.\-]{3,}"
+                          // pattern=""
                           title={
                             'The Address requires a minimum of 3 characters'
                           }
@@ -439,7 +439,7 @@ function EmployeeCreateForm() {
                           Email :{' '}
                         </label>
                         <input
-                          type="email"
+                          type="text"
                           className="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
                           id="employeeEmail"
                           placeholder="Enter your email"
