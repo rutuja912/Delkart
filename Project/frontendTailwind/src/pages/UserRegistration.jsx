@@ -254,6 +254,7 @@ function UserRegistration() {
                     })
                     .catch((err) => {
                       console.log(err);
+                      console.error('Error details:', err.response?.data || err.message);
                       alert('User Registration Failed');
                     });
                 }}
