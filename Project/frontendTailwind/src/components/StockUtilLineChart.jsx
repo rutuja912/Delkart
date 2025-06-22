@@ -50,7 +50,7 @@ export default function StockUtilLineChart() {
   const getAdditions = async () => {
     //getMaintainence is the function to get the data from the backend
     await axios
-      .get('http://localhost:8070/stockUtilisation/type/' + 'Additions')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/type/` + 'Additions')
       .then((res) => {
         setAdditions(res.data); //setMaintainence  is used to update the state variable
       })
@@ -66,7 +66,7 @@ export default function StockUtilLineChart() {
   const getIssues = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation/type/' + 'Issues')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/type/` + 'Issues')
       .then((res) => {
         setIssues(res.data); //setMaintainence  is used to update the state variable
       })

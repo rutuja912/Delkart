@@ -42,7 +42,7 @@ export default function ProductionLineChart() {
 
   async function getOrders() {
     await axios
-      .get('http://localhost:8070/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setOrder(res.data);
       })

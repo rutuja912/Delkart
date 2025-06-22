@@ -19,7 +19,7 @@ const StockUtilPieChart = () => {
 
   const getPendingStock = async () => {
     axios
-      .get('http://localhost:8070/pendingStock')
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock`)
       .then((res) => {
         setPendingStock(res.data);
       })

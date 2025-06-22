@@ -20,7 +20,7 @@ const SalesChart = () => {
 
   const getSales = async () => {
     axios
-      .get('http://localhost:8070/sales/')
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setSales(res.data);
       })

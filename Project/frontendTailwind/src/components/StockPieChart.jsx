@@ -20,7 +20,7 @@ const StockPieChart = () => {
 
   const getStockUtil = async () => {
     axios
-      .get('http://localhost:8070/stockUtilisation')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation`)
       .then((res) => {
         setStockUtil(res.data);
       })
@@ -31,7 +31,7 @@ const StockPieChart = () => {
 
   const getStock = async () => {
     axios
-      .get('http://localhost:8070/stock')
+      .get(`${process.env.REACT_APP_API_URL}/stock`)
       .then((res) => {
         setStock(res.data);
       })
