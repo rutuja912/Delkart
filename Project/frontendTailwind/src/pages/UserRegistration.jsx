@@ -248,9 +248,9 @@ function UserRegistration() {
                   };
 
                   await axios
-                    .post('http://localhost:8070/users', newUser)
+                    .post(`${process.env.REACT_APP_API_URL}/users`, newUser)
                     .then((res) => {
-                      document.location.href = 'http://localhost:3000/';
+                      document.location.href = '/';
                     })
                     .catch((err) => {
                       console.log(err);
