@@ -38,7 +38,7 @@ export default function CostedOrders() {
 
   async function getOrders() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setOrder(res.data);
       })
@@ -100,7 +100,7 @@ export default function CostedOrders() {
     const salesStatus = 'Pending';
     //  const statusPass = {salesStatus}
     await axios
-      .put('${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' + id, {
+      .put(`${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' + id, {
         status: salesStatus,
       })
       .then((res) => {

@@ -100,7 +100,7 @@ export default function FinalCostOrder() {
   const [employee, setEmployee] = useState([]);
   const getEmployees = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -196,7 +196,7 @@ export default function FinalCostOrder() {
                         const statusPass = { salesStatus };
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' +
+                            `${process.env.REACT_APP_API_URL}/Production/order/updateStatus/` +
                               updateOrder.invoiceNo,
                             { status: salesStatus }
                           )
@@ -210,7 +210,7 @@ export default function FinalCostOrder() {
                         console.log(updateOrder);
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/Production/order/update/' +
+                            `${process.env.REACT_APP_API_URL}/Production/order/update/' +
                               id,
                             updateOrder
                           )

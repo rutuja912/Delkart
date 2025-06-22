@@ -30,7 +30,7 @@ const FinanceDashboard = () => {
 
   const getFinance = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/finance/viewTransaction')
+      .get(`${process.env.REACT_APP_API_URL}/finance/viewTransaction`)
       .then((res) => {
         setTransactions(res.data);
       })

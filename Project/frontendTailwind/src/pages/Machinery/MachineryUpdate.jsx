@@ -136,7 +136,7 @@ function MachineryUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/machinery/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/machinery/update/` + id,
                             newMachine
                           )
                           .then((res) => {

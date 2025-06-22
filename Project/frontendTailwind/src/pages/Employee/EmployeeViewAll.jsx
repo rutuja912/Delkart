@@ -34,7 +34,7 @@ const navigate = useNavigate();
 
   const getEmployee = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployee(res.data);
       })

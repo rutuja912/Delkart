@@ -143,7 +143,7 @@ function StockAdd() {
 
                         console.log(newStock);
                         await axios
-                          .post('${process.env.REACT_APP_API_URL}/stock/create', newStock)
+                          .post(`${process.env.REACT_APP_API_URL}/stock/create`, newStock)
                           .then(() => {
                             Swal.fire({
                               icon: 'success',
@@ -166,7 +166,7 @@ function StockAdd() {
                         if (success === true) {
                           await axios
                             .post(
-                              '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
+                              `${process.env.REACT_APP_API_URL}/stockUtilisation/create`,
                               newStockUtil
                             )
                             .then(() => {

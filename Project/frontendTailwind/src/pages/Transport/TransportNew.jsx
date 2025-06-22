@@ -54,7 +54,7 @@ const TransportNew = () => {
 
   const getDrivers = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDrivers(res.data);
       })
@@ -65,7 +65,7 @@ const TransportNew = () => {
 
   const getEmployees = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployees(res.data);
       })
@@ -76,7 +76,7 @@ const TransportNew = () => {
 
   const getGoods = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/sales/')
+      .get(`${process.env.REACT_APP_API_URL}/sales/')
       .then((res) => {
         setGoods(res.data);
       })
@@ -157,7 +157,7 @@ const TransportNew = () => {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/transport/create',
+                            `${process.env.REACT_APP_API_URL}/transport/create',
                             newTransport
                           )
                           .then((res) => {

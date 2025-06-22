@@ -32,7 +32,7 @@ function ViewAllWorkInProgress() {
   const getStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stock/category/' + 'Work')
+      .get(`${process.env.REACT_APP_API_URL}/stock/category/` + 'Work')
       .then((res) => {
         setStock(res.data); //setStock is used to update the state variable
       })
@@ -44,7 +44,7 @@ function ViewAllWorkInProgress() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stockUtilisation/category/' + 'Work')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/category/` + 'Work')
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
       })
@@ -57,7 +57,7 @@ function ViewAllWorkInProgress() {
 
   const deleteStock = async (id) => {
     await axios
-      .delete('${process.env.REACT_APP_API_URL}/stock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/stock/delete/` + id)
       .then(() => {
         getStock();
       })

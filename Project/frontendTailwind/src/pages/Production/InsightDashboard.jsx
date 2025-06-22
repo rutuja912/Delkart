@@ -33,7 +33,7 @@ const InsightDashboard = () => {
   const [Sales, setSale] = useState([]);
   async function getOrders() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setOrder(res.data);
       })

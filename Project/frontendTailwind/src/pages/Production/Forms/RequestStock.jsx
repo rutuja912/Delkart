@@ -89,7 +89,7 @@ export default function UpdateOrder() {
   const [employee, setEmployee] = useState([]);
   const getEmployees = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -185,7 +185,7 @@ export default function UpdateOrder() {
                         //  const statusPass = {salesStatus}
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' +
+                            `${process.env.REACT_APP_API_URL}/Production/order/updateStatus/` +
                               id,
                             { status: salesStatus }
                           )
@@ -199,7 +199,7 @@ export default function UpdateOrder() {
                         console.log(newOrder);
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/production/order/orderCreate',
+                            `${process.env.REACT_APP_API_URL}/production/order/orderCreate`,
                             newOrder
                           )
                           .then(() => {

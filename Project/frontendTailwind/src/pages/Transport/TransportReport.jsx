@@ -32,7 +32,7 @@ const TransportReport = () => {
 
   const getTransport = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/transport/')
+      .get(`${process.env.REACT_APP_API_URL}/transport/`)
       .then((res) => {
         setTransport(res.data);
       })

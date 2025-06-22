@@ -144,7 +144,7 @@ function EmployeeCreateForm() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/employee/createEmployee',
+                            `${process.env.REACT_APP_API_URL}/employee/createEmployee`,
                             newEmployee
                           )
                           .then((res) => {

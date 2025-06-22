@@ -134,7 +134,7 @@ function MaintenanceUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/maintainence/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/maintainence/update/` + id,
                             newMaintenance
                           )
                           .then((res) => {

@@ -28,7 +28,7 @@ function PendingStockPDf() {
   const getPendingStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock')
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock`)
       .then((res) => {
         setPendingStock(res.data); //setStock is used to update the state variable
         console.log(res.data);

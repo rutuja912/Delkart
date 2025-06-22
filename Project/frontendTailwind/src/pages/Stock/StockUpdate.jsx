@@ -47,7 +47,7 @@ function StockUpdate() {
 
   const getStock = () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/stock/' + id)
+      .get(`${process.env.REACT_APP_API_URL}/stock/${id}`)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -144,7 +144,7 @@ function StockUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/stock/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/stock/update/${id}`,
                             newStock
                           )
                           .then((res) => {

@@ -33,7 +33,7 @@ export default function CompletedOrdersDateRange() {
   const getFinance = async () => {
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/production/order/date/' +
+        `${process.env.REACT_APP_API_URL}/production/order/date/` +
           location.state.DS +
           '/' +
           location.state.DE
@@ -54,7 +54,7 @@ export default function CompletedOrdersDateRange() {
 
   async function getOrders() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setOrder(res.data);
       })

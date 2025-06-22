@@ -68,7 +68,7 @@ function DamagedStockUpdate() {
 
             await axios
               .put(
-                '${process.env.REACT_APP_API_URL}/damagedStock/update/' + id,
+                `${process.env.REACT_APP_API_URL}/damagedStock/update/${id}`,
                 newDamagedStock
               )
               .then((res) => {

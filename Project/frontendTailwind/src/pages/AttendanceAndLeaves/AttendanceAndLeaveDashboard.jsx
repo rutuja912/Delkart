@@ -51,7 +51,7 @@ const navigate = useNavigate();
 
   const getEmployee = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -62,7 +62,7 @@ const navigate = useNavigate();
 
   const getAttendance = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/attendance/viewAttendance')
+      .get(`${process.env.REACT_APP_API_URL}/attendance/viewAttendance`)
       .then((res) => {
         setAttendance(res.data);
       })
@@ -73,7 +73,7 @@ const navigate = useNavigate();
 
   const getLeave = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/leave/viewLeave')
+      .get(`${process.env.REACT_APP_API_URL}/leave/viewLeave`)
       .then((res) => {
         setLeave(res.data);
       })

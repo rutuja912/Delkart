@@ -42,7 +42,7 @@ function StockView() {
   const getStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stock')
+      .get(`${process.env.REACT_APP_API_URL}/stock`)
       .then((res) => {
         setStock(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -55,7 +55,7 @@ function StockView() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stockUtilisation')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation`)
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -69,7 +69,7 @@ function StockView() {
 
   const deleteStock = async (id) => {
     await axios
-      .delete('${process.env.REACT_APP_API_URL}/stock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/stock/delete/${id}`)
       .then(() => {
         getStock();
       })

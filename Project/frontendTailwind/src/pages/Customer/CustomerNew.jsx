@@ -103,7 +103,7 @@ function NewCustomerForm() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/customer/create',
+                            `${process.env.REACT_APP_API_URL}/customer/create`,
                             newCustomer
                           )
                           .then((res) => {

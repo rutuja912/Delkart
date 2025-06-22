@@ -34,7 +34,7 @@ const DriverDashboard = () => {
 
   const getDriver = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDriver(res.data);
       })

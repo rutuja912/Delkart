@@ -111,7 +111,7 @@ function PendingStockAdd() {
                         console.log(newStock);
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/pendingStock/create',
+                            `${process.env.REACT_APP_API_URL}/pendingStock/create`,
                             newStock
                           )
                           .then(() => {

@@ -43,7 +43,7 @@ const StockUtilisationDashboard = () => {
   const getStockUtil = async () => {
     //getdamagedStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stockUtilisation/')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/`)
       .then((res) => {
         setStockUtil(res.data); //setDamagedStock is used to update the state variable
         console.log(res.data);
@@ -55,7 +55,7 @@ const StockUtilisationDashboard = () => {
 
   async function getProcessing() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock/status/' + 'Processing')
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock/status/` + 'Processing')
       .then((res) => {
         setProcessing(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -67,7 +67,7 @@ const StockUtilisationDashboard = () => {
 
   async function getResolved() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock/status/' + 'Resolved')
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock/status/` + 'Resolved')
       .then((res) => {
         setResolved(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -79,7 +79,7 @@ const StockUtilisationDashboard = () => {
 
   async function getOrders() {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setOrder(res.data);
       })

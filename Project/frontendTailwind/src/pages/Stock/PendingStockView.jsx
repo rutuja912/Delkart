@@ -27,7 +27,7 @@ function PendingStockView() {
   const getPendingStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock')
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock`)
       .then((res) => {
         setPendingStock(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -41,7 +41,7 @@ function PendingStockView() {
 
   const deletePendingStock = async (id) => {
     await axios
-      .delete('${process.env.REACT_APP_API_URL}/pendingStock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/pendingStock/delete/${id}`)
       .then(() => {
         alert('Data deleted successfully');
         getPendingStock();

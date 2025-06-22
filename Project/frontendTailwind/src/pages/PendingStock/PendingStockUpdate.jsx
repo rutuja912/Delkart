@@ -36,7 +36,7 @@ function PendingStockUpdate() {
 
   const getPendingStock = () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock/' + id)
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock/` + id)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -129,7 +129,7 @@ function PendingStockUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/pendingStock/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/pendingStock/update/` + id,
                             newStock
                           )
                           .then((res) => {

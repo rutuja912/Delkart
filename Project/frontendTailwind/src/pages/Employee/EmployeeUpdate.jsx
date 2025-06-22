@@ -159,7 +159,7 @@ function EmployeeUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/employee/updateEmployee/' +
+                            `${process.env.REACT_APP_API_URL}/employee/updateEmployee/` +
                               id,
                             newEmployee
                           )

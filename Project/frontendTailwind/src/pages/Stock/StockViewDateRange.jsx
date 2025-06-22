@@ -43,7 +43,7 @@ function StockViewDateRange() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/stock/date/' +
+        `${process.env.REACT_APP_API_URL}/stock/date/` +
           location.state.DS +
           '/' +
           location.state.DE
@@ -61,7 +61,7 @@ function StockViewDateRange() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/stockUtilisation/date/' +
+        `${process.env.REACT_APP_API_URL}/stockUtilisation/date/` +
           location.state.DS +
           '/' +
           location.state.DE
@@ -79,7 +79,7 @@ function StockViewDateRange() {
 
   const deleteStock = async (id) => {
     await axios
-      .delete('${process.env.REACT_APP_API_URL}/stock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/stock/delete/${id}`)
       .then(() => {
         getStock();
       })

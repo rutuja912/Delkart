@@ -90,7 +90,7 @@ function IssuesForm() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/stockUtilisation')
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation`)
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log('stock util', res.data);
@@ -219,7 +219,7 @@ function IssuesForm() {
                         if (remaining >= quantity) {
                           await axios
                             .post(
-                              '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
+                              `${process.env.REACT_APP_API_URL}/stockUtilisation/create`,
                               newStockUtil
                             )
                             .then(() => {
@@ -243,7 +243,7 @@ function IssuesForm() {
                           const statusPass = { salesStatus };
                           await axios
                             .put(
-                              '${process.env.REACT_APP_API_URL}/stock/updateStatus/' + id,
+                              `${process.env.REACT_APP_API_URL}/stock/updateStatus/` + id,
                               { status: salesStatus }
                             )
                             .then((res) => {})

@@ -41,7 +41,7 @@ function RequestedOrdersUpdate() {
 
   const getPendingStock = () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/pendingStock/' + id)
+      .get(`${process.env.REACT_APP_API_URL}/pendingStock/{id}`)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -60,7 +60,7 @@ function RequestedOrdersUpdate() {
 
   const getStock = async () => {
     await axios
-      .get('${process.env.REACT_APP_API_URL}/stock/ViewStock/' + code)
+      .get(`${process.env.REACT_APP_API_URL}/stock/ViewStock/{code}`)
       .then((res) => {
         console.log('data', res.data);
         setStock(res.data);
@@ -218,9 +218,9 @@ function RequestedOrdersUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/pendingStock/update/' + id,
-                            newPStock
-                          )
+                              `${process.env.REACT_APP_API_URL}/pendingStock/update/${id}`,
+                              newPStock
+                            )
                           .then((res) => {
                             alert('Data updated successfully');
                             console.log(newStock);
@@ -236,7 +236,7 @@ function RequestedOrdersUpdate() {
                         if (success === false) {
                           await axios
                             .post(
-                              '${process.env.REACT_APP_API_URL}/stock/create',
+                              `${process.env.REACT_APP_API_URL}/stock/create`,
                               newStock
                             )
                             .then(() => {
@@ -260,7 +260,7 @@ function RequestedOrdersUpdate() {
                         }
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
+                            `${process.env.REACT_APP_API_URL}/stockUtilisation/create`,
                             newStockUtil
                           )
                           .then(() => {

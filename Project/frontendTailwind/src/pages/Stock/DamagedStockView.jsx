@@ -15,7 +15,7 @@ function DamagedStockView() {
   const getdamagedStock = async () => {
     //getdamagedStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/damagedStock/')
+      .get(`${process.env.REACT_APP_API_URL}/damagedStock/`)
       .then((res) => {
         setDamagedStock(res.data); //setDamagedStock is used to update the state variable
         console.log(res.data);
@@ -29,7 +29,7 @@ function DamagedStockView() {
 
   const deleteDamagedStock = async (id) => {
     await axios
-      .delete('${process.env.REACT_APP_API_URL}/damagedStock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/damagedStock/delete/${id}`)
       .then(() => {
         alert('Data deleted successfully');
         getdamagedStock();

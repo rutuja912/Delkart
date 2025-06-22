@@ -40,7 +40,7 @@ const VehiMaintenanceDateRange = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/maintainenceVehicle/date/' +
+        `${process.env.REACT_APP_API_URL}/maintainenceVehicle/date/` +
           location.state.DS +
           '/' +
           location.state.DE

@@ -124,7 +124,7 @@ function SalaryUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/salary/updateSalary/' + id,
+                            `${process.env.REACT_APP_API_URL}/salary/updateSalary/` + id,
                             newSalary
                           )
                           .then((res) => {

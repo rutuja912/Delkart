@@ -34,7 +34,7 @@ const FinanceDateRange = () => {
   const getFinance = async () => {
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/finance/date/' +
+        `${process.env.REACT_APP_API_URL}/finance/date/` +
           location.state.DS +
           '/' +
           location.state.DE

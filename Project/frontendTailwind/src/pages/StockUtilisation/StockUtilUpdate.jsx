@@ -38,7 +38,7 @@ function StockUtilUpdate() {
 
   const getStockUtil = () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/stockUtilisation/' + id)
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/${id}`)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -137,8 +137,7 @@ function StockUtilUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/stockUtilisation/update/' +
-                              id,
+                            `${process.env.REACT_APP_API_URL}/stockUtilisation/update/${id}` ,
                             newStockUtil
                           )
                           .then((res) => {

@@ -44,7 +44,7 @@ const AttendanceReport = () => {
 
   const getAttendance = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/attendance/viewAttendance')
+      .get(`${process.env.REACT_APP_API_URL}/attendance/viewAttendance`)
       .then((res) => {
         setAttendance(res.data);
       })

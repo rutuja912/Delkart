@@ -42,7 +42,7 @@ export default function MaintainenceReport() {
   const getMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/maintainence/')
+      .get(`${process.env.REACT_APP_API_URL}/maintainence/`)
       .then((res) => {
         setMaintainence(res.data); //setMaintainence  is used to update the state variable
       })

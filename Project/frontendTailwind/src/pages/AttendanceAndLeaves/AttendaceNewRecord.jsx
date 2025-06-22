@@ -29,7 +29,7 @@ function AttendanceNewRecord() {
 
   const getEmployeeNumbers = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployeeNumbers')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployeeNumbers`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -160,7 +160,7 @@ function AttendanceNewRecord() {
 
                           await axios
                             .post(
-                              '${process.env.REACT_APP_API_URL}/attendance/createAttendance',
+                              `${process.env.REACT_APP_API_URL}/attendance/createAttendance`,
                               newAttendance
                             )
                             .then((res) => {

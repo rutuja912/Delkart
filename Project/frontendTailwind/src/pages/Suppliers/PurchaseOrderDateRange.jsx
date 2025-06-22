@@ -33,7 +33,7 @@ function PurchaseOrderDateRange() {
   const getPurchaseOrder = async () => {
     axios
       .get(
-        '${process.env.REACT_APP_API_URL}/purchaseOrder/date/' +
+        `${process.env.REACT_APP_API_URL}/purchaseOrder/date/` +
           location.state.DS +
           '/' +
           location.state.DE

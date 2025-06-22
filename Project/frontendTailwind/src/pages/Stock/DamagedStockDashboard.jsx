@@ -17,7 +17,7 @@ const DamagedStockDashboard = () => {
   const getdamagedStock = async () => {
     //getdamagedStock is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/damagedStock/')
+      .get(`${process.env.REACT_APP_API_URL}/damagedStock/`)
       .then((res) => {
         setDamagedStock(res.data); //setDamagedStock is used to update the state variable
         console.log(res.data);

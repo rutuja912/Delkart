@@ -131,7 +131,7 @@ function SupplierUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/supplier/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/supplier/update/` + id,
                             updatedSupplier
                           )
                           .then((res) => {

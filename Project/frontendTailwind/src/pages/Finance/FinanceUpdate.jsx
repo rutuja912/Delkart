@@ -131,8 +131,7 @@ function TransactionUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/finance/updateTransaction/' +
-                              id,
+                            `${process.env.REACT_APP_API_URL}/finance/updateTransaction/${id}` +   
                             newTransaction
                           )
                           .then((res) => {

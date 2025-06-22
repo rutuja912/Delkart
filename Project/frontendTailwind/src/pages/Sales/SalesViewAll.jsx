@@ -67,7 +67,7 @@ const SalesViewAll = () => {
 
   const getSalesbyDate = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/sales/date/' + dateStart + '/' + dateEnd)
+      .get(`${process.env.REACT_APP_API_URL}/sales/date/` + dateStart + '/' + dateEnd)
       .then((res) => {
         setSale(res.data);
       })

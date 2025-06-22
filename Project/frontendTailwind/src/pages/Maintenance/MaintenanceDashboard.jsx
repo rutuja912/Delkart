@@ -43,7 +43,7 @@ const MaintenanceDashboard = () => {
   const getMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/maintainence/')
+      .get(`${process.env.REACT_APP_API_URL}/maintainence/`)
       .then((res) => {
         setMaintainence(res.data); //setMaintainence  is used to update the state variable
       })
@@ -70,7 +70,7 @@ const MaintenanceDashboard = () => {
   const getVMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/maintainenceVehicle/')
+      .get(`${process.env.REACT_APP_API_URL}/maintainenceVehicle/`)
       .then((res) => {
         setMaintainenceVehi(res.data); //setMaintainence  is used to update the state variable
       })
@@ -95,7 +95,7 @@ const MaintenanceDashboard = () => {
   const getMMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('${process.env.REACT_APP_API_URL}/maintainenceMachine/')
+      .get(`${process.env.REACT_APP_API_URL}/maintainenceMachine/`)
       .then((res) => {
         setMaintainenceMachine(res.data); //setMaintainence  is used to update the state variable
       })

@@ -34,7 +34,7 @@ const FinanceViewAll = () => {
 
   const getSalary = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/salary/SalaryView')
+      .get(`${process.env.REACT_APP_API_URL}/salary/SalaryView`)
       .then((res) => {
         setSalary(res.data);
       })

@@ -44,7 +44,7 @@ const TransportUpdate = () => {
 
   const getDrivers = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/driver/')
+      .get(`${process.env.REACT_APP_API_URL}/driver/`)
       .then((res) => {
         setDrivers(res.data);
       })
@@ -55,7 +55,7 @@ const TransportUpdate = () => {
 
   const getEmployees = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployees(res.data);
       })
@@ -66,7 +66,7 @@ const TransportUpdate = () => {
 
   const getGoods = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/sales/')
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setGoods(res.data);
       })
@@ -215,7 +215,7 @@ const TransportUpdate = () => {
                       </div>
 
                       <div className="mb-3">
-                        <label className="form-label" className="block">
+                        <label className="form-label block">
                           Transportation Type
                         </label>
                         <select

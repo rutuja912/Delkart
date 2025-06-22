@@ -37,7 +37,7 @@ const navigate = useNavigate();
 
   const getLeave = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/leave/viewLeave')
+      .get(`${process.env.REACT_APP_API_URL}/leave/viewLeave`)
       .then((res) => {
         setLeave(res.data);
       })

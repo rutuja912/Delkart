@@ -44,7 +44,7 @@ const DriverView = () => {
 
   const getEmployees = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployees(res.data);
       })
@@ -118,7 +118,7 @@ const DriverView = () => {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/driver/create',
+                            `${process.env.REACT_APP_API_URL}/driver/create`,
                             newDriver
                           )
                           .then((res) => {

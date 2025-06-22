@@ -102,7 +102,7 @@ function MaintenanceCreateForm() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/maintainence/create',
+                            `${process.env.REACT_APP_API_URL}/maintainence/create`,
                             newMaintenance
                           )
                           .then((res) => {

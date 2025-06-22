@@ -108,7 +108,7 @@ function PurchaseOrderAdd() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/purchaseOrder/create',
+                            `${process.env.REACT_APP_API_URL}/purchaseOrder/create`,
                             newPurchaseOrder
                           )
                           .then((res) => {

@@ -30,7 +30,7 @@ function AttendanceNew() {
 
   const getEmployeeNumbers = async () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployeeNumbers')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployeeNumbers`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -74,7 +74,7 @@ function AttendanceNew() {
  
 
   return (
-    <div>
+    <>
       {/* DON'T CHANGE ANYTHING HERE */}
 
       <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -139,7 +139,7 @@ function AttendanceNew() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/attendance/createAttendance',
+                            `${process.env.REACT_APP_API_URL}/attendance/createAttendance`,
                             newAttendance
                           )
                           .then((res) => {
@@ -247,7 +247,7 @@ function AttendanceNew() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

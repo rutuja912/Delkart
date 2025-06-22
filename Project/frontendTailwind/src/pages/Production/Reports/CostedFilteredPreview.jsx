@@ -33,7 +33,7 @@ export default function CostedFilteredPreview() {
   async function getOrders() {
     await axios
       .get(
-        '${process.env.REACT_APP_API_URL}/production/order/date/' +
+        `${process.env.REACT_APP_API_URL}/production/order/date/` +
           location.state.DS +
           '/' +
           location.state.DE

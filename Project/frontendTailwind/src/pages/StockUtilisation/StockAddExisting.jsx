@@ -44,7 +44,7 @@ function StockAddExisting() {
 
   const getStock = () => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/stock/' + id)
+      .get(`${process.env.REACT_APP_API_URL}/stock/${id}`)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -161,7 +161,7 @@ function StockAddExisting() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
+                            `${process.env.REACT_APP_API_URL}/stockUtilisation/create',
                             newStockUtil
                           )
                           .then(() => {

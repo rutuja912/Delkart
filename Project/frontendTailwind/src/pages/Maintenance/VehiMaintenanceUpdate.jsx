@@ -140,7 +140,7 @@ function VehiMaintenanceUpdate() {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/maintainenceVehicle/update/' +
+                            `${process.env.REACT_APP_API_URL}/maintainenceVehicle/update/` +
                               id,
                             newMaintenance
                           )

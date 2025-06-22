@@ -179,10 +179,9 @@ const AttendanceUpdate = () => {
 
                           await axios
                             .put(
-                              '${process.env.REACT_APP_API_URL}/attendance/updateAttendance/' +
-                                id,
-                              NewAttendace
-                            )
+                              `${process.env.REACT_APP_API_URL}/attendance/updateAttendance/${id}`,
+                                NewAttendace)
+
                             .then((res) => {
                               Swal.fire({
                                 icon: 'success',

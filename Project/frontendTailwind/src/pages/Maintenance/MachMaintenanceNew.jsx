@@ -120,7 +120,7 @@ function MachMaintenanceCreateForm() {
 
                         await axios
                           .post(
-                            '${process.env.REACT_APP_API_URL}/maintainenceMachine/create',
+                            `${process.env.REACT_APP_API_URL}/maintainenceMachine/create`,
                             newMaintenance
                           )
                           .then((res) => {

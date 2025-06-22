@@ -136,7 +136,7 @@ const LeaveUpdate = () => {
 
                         await axios
                           .put(
-                            '${process.env.REACT_APP_API_URL}/leave/updateLeave/' + id,
+                            `${process.env.REACT_APP_API_URL}/leave/updateLeave/${id}`,
                             newEmployee
                           )
                           .then((res) => {
