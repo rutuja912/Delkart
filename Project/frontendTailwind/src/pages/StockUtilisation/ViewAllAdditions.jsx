@@ -43,7 +43,7 @@ function ViewAllAdditions() {
 
   const deleteStockUtil = async (id) => {
     await axios
-      .delete(`${process.env.REACT_APP_API_URL}/stockUtilisation/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/stockUtilisation/delete/` + id)
       .then(() => {
         getStockUtil();
       })

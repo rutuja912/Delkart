@@ -210,7 +210,7 @@ export default function FinalCostOrder() {
                         console.log(updateOrder);
                         await axios
                           .put(
-                            `${process.env.REACT_APP_API_URL}/Production/order/update/' +
+                            `${process.env.REACT_APP_API_URL}/Production/order/update/` +
                               id,
                             updateOrder
                           )

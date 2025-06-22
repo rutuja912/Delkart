@@ -161,7 +161,7 @@ function StockAddExisting() {
 
                         await axios
                           .post(
-                            `${process.env.REACT_APP_API_URL}/stockUtilisation/create',
+                            `${process.env.REACT_APP_API_URL}/stockUtilisation/create`,
                             newStockUtil
                           )
                           .then(() => {

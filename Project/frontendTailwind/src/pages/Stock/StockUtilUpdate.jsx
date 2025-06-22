@@ -142,7 +142,7 @@ function StockUtilUpdate() {
 
                         await axios
                           .put(
-                            `${process.env.REACT_APP_API_URL}/stockUtilisation/update/' +
+                            `${process.env.REACT_APP_API_URL}/stockUtilisation/update/` +
                               id,
                             newStockUtil
                           )

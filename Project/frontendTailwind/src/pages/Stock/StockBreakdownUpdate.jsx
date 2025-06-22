@@ -209,7 +209,7 @@ function StockBreakdownUpdate() {
 
                         await axios
                           .put(
-                            `${process.env.REACT_APP_API_URL}/stock/update/' + id,
+                            `${process.env.REACT_APP_API_URL}/stock/update/` + id,
                             newStock
                           )
                           .then((res) => {
