@@ -42,7 +42,7 @@ function ProcessingRequest() {
 
   const deletePendingStock = async (id) => {
     await axios
-      .delete(`${process.env.REACT_APP_API_URL}/pendingStock/delete/' + id)
+      .delete(`${process.env.REACT_APP_API_URL}/pendingStock/delete/` + id)
       .then(() => {
         getPendingStock();
       })
