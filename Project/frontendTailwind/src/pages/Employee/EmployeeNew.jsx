@@ -245,23 +245,23 @@ function EmployeeCreateForm() {
 
                       <div className="mb-3">
                         <label for="employeeNIC" className="form-label">
-                          NIC number :{' '}
+                          Adhaar Card number :{' '}
                         </label>
                         <input
                           type="text"
                           className="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
                           id="employeeNIC"
-                          placeholder="Enter your NIC number"
+                          placeholder="Enter your Adhaar Card number"
                           required
                           value={employeeNIC}
                           onChange={(e) => {
                             setEmployeeNIC(e.target.value);
                           }}
-                          pattern="[0-9vVxX]{12}"
-                          maxLength={12}
-                          title={
-                            'The NIC number requires a 9 digit number and a letter at the end or a 12 digit number'
-                          }
+                          // pattern="[0-9vVxX]{12}"
+                          maxLength={16}
+                          // title={
+                          //   'The NIC number requires a 9 digit number and a letter at the end or a 12 digit number'
+                          // }
                         />
                       </div>
 
@@ -293,7 +293,7 @@ function EmployeeCreateForm() {
                           type="date"
                           className="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
                           id="employeeDOB"
-                          placeholder="Enter your birthday"
+                          placeholder="Enter your birthdate"
                           required
                           max={date}
                           value={employeeDOB}
@@ -311,7 +311,7 @@ function EmployeeCreateForm() {
                           type="date"
                           className="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
                           id="employeeDateOfJoin"
-                          placeholder="Enter your date of join"
+                          placeholder="Enter your date of joining"
                           required
                           max={date}
                           value={employeeDateOfJoin}
