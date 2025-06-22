@@ -201,9 +201,9 @@ function SalesInvoice() {
                             </div>
 
                             <div className="text-center">
-                              {/* <p className="pt-7 text-3xl">Lanka MountCastle (Pvt) Ltd</p> */}
+                              {/* <p className="pt-7 text-3xl">Delkart Pvt Ltd</p> */}
                               <p className="text-xl mt-2">
-                                Lanka MountCastle (Pvt) Ltd,
+                                Delkart Pvt Ltd,
                               </p>
                               <p className="text-xl">
                                 No.124, Hendala, Wattala

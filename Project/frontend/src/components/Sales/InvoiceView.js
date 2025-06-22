@@ -45,8 +45,8 @@ function InvoiceView() {
       
       <div className='viewContainer'>
         <div className='factory-details'>
-          <h2>Lanka MountCastle (Pvt) Ltd</h2>
-          <h6>Lanka MountCastle (Pvt) Ltd,</h6>
+          <h2>Delkart Pvt Ltd</h2>
+          <h6>Delkart Pvt Ltd,</h6>
           <h6>No.124, Hendala, Wattala</h6>
           <h6>"Telephone"</h6>
         </div><br></br><br></br>

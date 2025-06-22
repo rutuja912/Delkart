@@ -140,7 +140,7 @@ export default function MaintainenceReport() {
 
                     <div className="text-center mb-10">
                       <p className="text-xl mt-2">
-                        Lanka MountCastle (Pvt) Ltd,
+                        Delkart Pvt Ltd,
                       </p>
                       <p className="text-xl">No.124, Hendala, Wattala</p>
                       <p>011 2942 672</p>
