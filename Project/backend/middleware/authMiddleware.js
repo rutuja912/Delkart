@@ -28,13 +28,15 @@ const protect = asyncHandler(async (req, res, next) => {
   throw new Error('Not authorized, no token');
 });
 
-const role = (req, res, next) => {
-  if (req.user && req.user.role) {
-    next();
-  } else {
-    res.status(401);
-    throw new Error('Not authorized as an' + req.user.role);
-  }
+const requireRole = (...allowedRoles) => {
+  return (req, res, next) => {
+    if (req.user && allowedRoles.includes(req.user.role)) {
+      next();
+    } else {
+      res.status(403);
+      throw new Error('Not authorized as ' + (req.user?.role || 'unknown'));
+    }
+  };
 };
 
-export { protect, role };
+export { protect, requireRole };

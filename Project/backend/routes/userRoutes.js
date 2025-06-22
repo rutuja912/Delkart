@@ -10,18 +10,22 @@ import {
   getUserById,
   updateUser,
 } from '../controllers/users.controller.js';
-import { protect, role } from '../middleware/authMiddleware.js';
+import { protect, requireRole } from '../middleware/authMiddleware.js';
 
-router.route('/').post(registerUser).get(protect, role, getUsers);
+router.route('/')
+  .post(registerUser)
+  .get(protect, requireRole('admin'), getUsers);
+
 router.post('/login', authUser);
-router
-  .route('/profile')
+
+router.route('/profile')
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
-router
-  .route('/:id')
-  .delete(protect, role, deleteUser)
-  .get(protect, role, getUserById)
-  .put(protect, role, updateUser);
+
+router.route('/:id')
+  .delete(protect, requireRole('admin'), deleteUser)
+  .get(protect, requireRole('admin'), getUserById)
+  .put(protect, requireRole('admin'), updateUser);
 
 export default router;
+
