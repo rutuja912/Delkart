@@ -31,7 +31,16 @@ const app = express();
 const PORT = process.env.PORT || 8070;
 
 //middlewear
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: [
+    'https://delkart.netlify.app', // Replace with your real Netlify URL
+    'http://localhost:3000'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(bodyParser.json());
 app.use('/machinery', machineryRouter);
 app.use('/maintainence', maintainenceRouter);
@@ -65,6 +74,8 @@ connection.once('open', () => {
   console.log('mongodb connection is successful!!');
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
   console.log(`server is up and running on ${PORT}`);
 });
+
+

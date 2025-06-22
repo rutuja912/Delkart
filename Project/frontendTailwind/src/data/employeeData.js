@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  FiShoppingBag,
-  FiUsers,
-  FiCalendar,
-  FiDollarSign,
-} from 'react-icons/fi';
+import { FiShoppingBag, FiUsers, FiCalendar, FiDollarSign } from 'react-icons/fi';
 
 export const links = [
   {

@@ -10,18 +10,45 @@ function UserLogin() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const submitHandler = async (e) => {
+    const submitHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    // Debug logging
+    console.log('API URL:', process.env.REACT_APP_API_URL);
+    console.log('Full URL:', `${process.env.REACT_APP_API_URL}/users/login`);
+
     try {
-      //const { data } = await axios.post('http://localhost:8070/users/login', {
-        const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, {
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, {
         email,
         password,
+      }, {
+        timeout: 30000, // 30 seconds timeout for Render free tier
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
+
+      console.log('Login successful:', data);
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(location.state?.from || '/EmployeeDashboard');
     } catch (errors) {
-      setError(true);
+      console.error('Login error:', errors);
+      
+      if (errors.code === 'ERR_NETWORK') {
+        setError('Cannot connect to server. Please check your internet connection.');
+      } else if (errors.code === 'ECONNABORTED') {
+        setError('Request timed out. The server might be starting up, please try again.');
+      } else if (errors.response?.status === 401) {
+        setError('Invalid email or password.');
+      } else if (errors.response?.status === 500) {
+        setError('Server error. Please try again later.');
+      } else {
+        setError(errors.response?.data?.message || 'Login failed. Please try again.');
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
