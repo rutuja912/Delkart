@@ -240,9 +240,8 @@ function PurchaseOrderAdd() {
                         >
                           <option value="">Select Transaction Type</option>
                           <option value="Order Placed">Order Placed</option>
-                          <option value="Order Completed">
-                            Order Completed
-                          </option>
+                          <option value="Order In Progress">Order In Progress</option>
+                          <option value="Order Completed">Order Completed</option>
                         </select>
                       </div>
 

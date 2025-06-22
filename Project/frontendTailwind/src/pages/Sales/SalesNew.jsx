@@ -252,6 +252,8 @@ function SalesCreateForm() {
                         >
                           <option selected>Select Status</option>
                           <option value="Pending">Pending</option>
+                          <option value="New">New</option>
+                          <option value="FInished">FInished</option>
                         </select>
                       </div>
 

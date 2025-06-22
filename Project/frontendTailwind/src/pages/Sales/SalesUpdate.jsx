@@ -253,7 +253,7 @@ function SalesUpdate() {
                         />
                       </div>
 
-                      <div className="mb-3">
+                      {/* <div className="mb-3">
                         <label htmlFor="status" className="form-label">
                           Status
                         </label>
@@ -266,7 +266,29 @@ function SalesUpdate() {
                             setStatus(e.target.value);
                           }}
                         />
+                      </div> */}
+
+                      
+                            <div className="mb-3">
+                        <label htmlFor="status" className="form-label">
+                          Status
+                        </label>
+                        <select
+                          class="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
+                          id="status"
+                          placeholder="Enter the Order Status"
+                          required="required"
+                          onChange={(e) => {
+                            setStatus(e.target.value);
+                          }}
+                        >
+                          <option value="">Select Status</option>
+                          <option value="Order Placed">Order Placed</option>
+                          <option value="Order In Progress">Order In Progress</option>
+                          <option value="Order Completed">Order Completed</option>
+                        </select>
                       </div>
+                      
 
                       {/* <option value='Pending'>Pending</option>
                                                   <option value='Pending'>Processing</option>
