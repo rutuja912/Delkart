@@ -133,7 +133,7 @@ function LeaveNew() {
 
                         await axios
                           .post(
-                            `${process.env.REACT_APP_API_URL}/leave/createLeave',
+                            `${process.env.REACT_APP_API_URL}/leave/createLeave`,
                             newLeave
                           )
                           .then((res) => {
