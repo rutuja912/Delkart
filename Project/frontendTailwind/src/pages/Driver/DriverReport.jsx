@@ -14,7 +14,7 @@ import {
 import TableData from '../../components/Table/TableData';
 import TableHeader from '../../components/Table/TableHeader';
 import { useStateContext } from '../../contexts/ContextProvider';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 
 const DriverReport = () => {
   const {

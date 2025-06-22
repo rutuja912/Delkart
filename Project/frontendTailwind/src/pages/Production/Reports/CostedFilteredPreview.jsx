@@ -12,7 +12,7 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from '../../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import Swal from 'sweetalert2';
 
-import logo from '../../../data/logo.png';
+import logo from '../../../data/logo.svg';
 
 export default function CostedFilteredPreview() {
   const navigate = useNavigate();

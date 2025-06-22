@@ -5,7 +5,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import TableData from '../../components/Table/TableData';
 import TableHeader from '../../components/Table/TableHeader';
 import { jsPDF } from 'jspdf';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 import Swal from 'sweetalert2';
 
 import { FiSettings } from 'react-icons/fi';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import logo from '../data/logo.png';
+import logo from '../data/logo.svg';
 
 function UserLogin() {
   const [email, setEmail] = useState('');

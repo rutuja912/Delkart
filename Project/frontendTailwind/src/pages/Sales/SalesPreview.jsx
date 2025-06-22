@@ -14,7 +14,7 @@ import {
   ThemeSettings,
 } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 import Swal from 'sweetalert2';
 
 export default function SalesPreview() {

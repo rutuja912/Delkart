@@ -8,7 +8,7 @@ import { DashTopBox, DashTopButton } from '../../components';
 import { FiSettings } from 'react-icons/fi';
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 import { jsPDF } from 'jspdf';
 
 function PurchaseOrderPreview() {

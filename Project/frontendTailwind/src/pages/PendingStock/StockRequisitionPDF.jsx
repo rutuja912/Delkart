@@ -6,7 +6,7 @@ import TableHeader from '../../components/Table/TableHeader';
 import TableData from '../../components/Table/TableData';
 import Header from '../../components/Header';
 import { useStateContext } from '../../contexts/ContextProvider';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 import Swal from 'sweetalert2';
 
 import { FiSettings } from 'react-icons/fi';

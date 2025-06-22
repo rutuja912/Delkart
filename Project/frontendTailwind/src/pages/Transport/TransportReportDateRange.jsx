@@ -14,7 +14,7 @@ import {
 } from '../../components';
 import TableData from '../../components/Table/TableData';
 import TableHeader from '../../components/Table/TableHeader';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 
 import { useStateContext } from '../../contexts/ContextProvider';
 

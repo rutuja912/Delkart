@@ -14,7 +14,7 @@ import { jsPDF } from 'jspdf';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import logo from '../../data/logo.png';
+import logo from '../../data/logo.svg';
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 const AttendanceReport = () => {
