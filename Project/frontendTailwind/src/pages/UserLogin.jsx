@@ -9,6 +9,7 @@ function UserLogin() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
     const submitHandler = async (e) => {
     e.preventDefault();
