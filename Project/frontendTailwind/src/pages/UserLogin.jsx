@@ -10,6 +10,7 @@ function UserLogin() {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
     const submitHandler = async (e) => {
     e.preventDefault();
@@ -27,9 +28,10 @@ function UserLogin() {
         email,
         password,
       }, {
-        timeout: 30000, // 30 seconds timeout for Render free tier
+        timeout: 80000, // 30 seconds timeout for Render free tier
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userInfo.token}`
         }
       });
 
