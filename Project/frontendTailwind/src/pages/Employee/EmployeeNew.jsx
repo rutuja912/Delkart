@@ -439,7 +439,7 @@ function EmployeeCreateForm() {
                           Email :{' '}
                         </label>
                         <input
-                          type="text"
+                          type="email"
                           className="mt-1 block w-800 rounded-md bg-gray-100 focus:bg-white dark:text-black"
                           id="employeeEmail"
                           placeholder="Enter your email"
