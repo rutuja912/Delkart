@@ -35,7 +35,7 @@ function StockAvailableList() {
   };
 
   const remoteData = new DataManager({
-    url: `${process.env.REACT_APP_API_URL}/stock',
+    url: `${process.env.REACT_APP_API_URL}/stock`,
     adaptor: new WebApiAdaptor(),
   });
 
