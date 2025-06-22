@@ -105,7 +105,7 @@ function MaintenanceCreateForm() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/maintainence/create',
+                            '${process.env.REACT_APP_API_URL}/maintainence/create',
                             newMaintenance
                           )
                           .then((res) => {

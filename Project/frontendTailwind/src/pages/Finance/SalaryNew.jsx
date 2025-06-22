@@ -103,7 +103,7 @@ function SalaryCreateForm() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/salary/SalaryNew',
+                            '${process.env.REACT_APP_API_URL}/salary/SalaryNew',
                             newSalary
                           )
                           .then((res) => {

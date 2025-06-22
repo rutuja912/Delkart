@@ -37,7 +37,7 @@ function SalaryUpdate() {
 
   const getSalary = () => {
     axios
-      .get(`http://localhost:8070/salary/SalaryView/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/salary/SalaryView/${id}`)
       .then((res) => {
         setEmpNumber(res.data.employeeNumber);
         setEmpBasic(res.data.employeeBasicSalary);
@@ -124,7 +124,7 @@ function SalaryUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/salary/updateSalary/' + id,
+                            '${process.env.REACT_APP_API_URL}/salary/updateSalary/' + id,
                             newSalary
                           )
                           .then((res) => {

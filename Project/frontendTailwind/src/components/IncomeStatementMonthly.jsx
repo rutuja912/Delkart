@@ -51,7 +51,7 @@ export default function SalesMonthlyChart() {
 
   const getSales = async () => {
     axios
-      .get('http://localhost:8070/sales/')
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setSales(res.data);
       })
@@ -64,7 +64,7 @@ export default function SalesMonthlyChart() {
 
   const getPurchaseOrder = async () => {
     axios
-      .get('http://localhost:8070/purchaseOrder')
+      .get(`${process.env.REACT_APP_API_URL}/purchaseOrder`)
       .then((res) => {
         setPurchase(res.data);
       })
@@ -75,7 +75,7 @@ export default function SalesMonthlyChart() {
   //production
   const getProduction = async () => {
     axios
-      .get('http://localhost:8070/production/order/allOrders')
+      .get(`${process.env.REACT_APP_API_URL}/production/order/allOrders`)
       .then((res) => {
         setProd(res.data);
       })
@@ -261,7 +261,7 @@ export default function SalesMonthlyChart() {
   var prodLen = prod.length;
 
   for (let index = 0; index < prodLen; index++) {
-    if (prod[index].status === 'Costed') {
+    if (prod[index].status === 'Costed'){ 
       switch (new Date(prod[index].requestDate).getMonth()) {
         case 0:
           janTotalProduction = janTotalProduction + prod[index].totalCost;

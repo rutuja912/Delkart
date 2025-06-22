@@ -43,7 +43,7 @@ function DamagedStockAdd() {
             console.log(newDamagedStock);
             await axios
               .post(
-                'http://localhost:8070/damagedStock/create',
+                '${process.env.REACT_APP_API_URL}/damagedStock/create',
                 newDamagedStock
               )
               .then((res) => {

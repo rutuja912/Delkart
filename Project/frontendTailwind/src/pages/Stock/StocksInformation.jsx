@@ -46,7 +46,7 @@ const StockInformation = () => {
   const getStock = async () => {
     // getStock is the function to get the data from the backend
     axios
-      .get(`http://localhost:8070/stock/stockInfo/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/stock/stockInfo/${id}`)
       .then((res) => {
         setStock(res.data); // setStock is used to update the state variable
       })
@@ -64,7 +64,7 @@ const StockInformation = () => {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get(`http://localhost:8070/stockUtilisation/ViewStockUtil/${temp}`)
+      .get(`${process.env.REACT_APP_API_URL}/stockUtilisation/ViewStockUtil/${temp}`)
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         // console.log(res.data);

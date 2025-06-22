@@ -34,7 +34,7 @@ export default function SalesPreviewByDate() {
   const getSale = async () => {
     axios
       .get(
-        'http://localhost:8070/sales/date/' +
+        '${process.env.REACT_APP_API_URL}/sales/date/' +
           location.state.DS +
           '/' +
           location.state.DE

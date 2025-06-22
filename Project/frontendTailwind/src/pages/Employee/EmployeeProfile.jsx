@@ -37,7 +37,7 @@ const EmployeeProfile = () => {
 
   const getEmployee = async () => {
     await axios
-      .get(`http://localhost:8070/employee/viewEmployeeAndSalary/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployeeAndSalary/${id}`)
       .then((res) => {
         setEmployee(res.data);
       })

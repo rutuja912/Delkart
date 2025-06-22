@@ -21,7 +21,7 @@ function DamagedStockUpdate() {
 
   const getDamagedStock = () => {
     axios
-      .get(`http://localhost:8070/damagedStock/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/damagedStock/${id}`)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setDamagedStockName(res.data.damagedStockName);
@@ -68,7 +68,7 @@ function DamagedStockUpdate() {
 
             await axios
               .put(
-                'http://localhost:8070/damagedStock/update/' + id,
+                '${process.env.REACT_APP_API_URL}/damagedStock/update/' + id,
                 newDamagedStock
               )
               .then((res) => {

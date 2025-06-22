@@ -27,7 +27,7 @@ const SupplierDetailsPreview = () => {
 
   const getSupplier = async () => {
     axios
-      .get('http://localhost:8070/supplier/')
+      .get('${process.env.REACT_APP_API_URL}/supplier/')
       .then((res) => {
         setSupplier(res.data);
       })

@@ -38,7 +38,7 @@ function StockUtilisationDateRange() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/stockUtilisation/date/' +
+        '${process.env.REACT_APP_API_URL}/stockUtilisation/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -56,7 +56,7 @@ function StockUtilisationDateRange() {
 
   const deleteStockUtil = async (id) => {
     await axios
-      .delete('http://localhost:8070/stockUtilisation/delete/' + id)
+      .delete('${process.env.REACT_APP_API_URL}/stockUtilisation/delete/' + id)
       .then(() => {
         getStockUtil();
       })

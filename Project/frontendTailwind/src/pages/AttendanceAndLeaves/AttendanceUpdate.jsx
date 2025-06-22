@@ -38,7 +38,7 @@ const AttendanceUpdate = () => {
 
   const getAttendance = () => {
     axios
-      .get(`http://localhost:8070/attendance/viewAttendance/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/attendance/viewAttendance/${id}`)
       .then((res) => {
         const date = new Date(res.data.employeeInTime);
         const startTime = new Date(
@@ -179,7 +179,7 @@ const AttendanceUpdate = () => {
 
                           await axios
                             .put(
-                              'http://localhost:8070/attendance/updateAttendance/' +
+                              '${process.env.REACT_APP_API_URL}/attendance/updateAttendance/' +
                                 id,
                               NewAttendace
                             )

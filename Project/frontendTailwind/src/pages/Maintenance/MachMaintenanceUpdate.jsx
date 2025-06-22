@@ -25,7 +25,7 @@ function MachMaintenanceUpdate() {
 
   const getMMaintainence = () => {
     axios
-      .get(`http://localhost:8070/maintainenceMachine/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/maintainenceMachine/${id}`)
       .then((res) => {
         const dob = new Date(res.data.lastMaintainedDate)
           .toISOString()
@@ -145,7 +145,7 @@ function MachMaintenanceUpdate() {
 
                         await axios
                           .put(
-                            `http://localhost:8070/maintainenceMachine/update/` +
+                            `${process.env.REACT_APP_API_URL}/maintainenceMachine/update/` +
                               id,
                             newMachMaintenance
                           )

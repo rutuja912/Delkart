@@ -35,7 +35,7 @@ function SupplierUpdate() {
 
   const getSupplier = () => {
     axios
-      .get(`http://localhost:8070/supplier/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/supplier/${id}`)
       .then((res) => {
         setSupplierId(res.data.supplierId);
         setCompanyname(res.data.companyname);
@@ -131,7 +131,7 @@ function SupplierUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/supplier/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/supplier/update/' + id,
                             updatedSupplier
                           )
                           .then((res) => {

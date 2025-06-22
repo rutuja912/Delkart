@@ -28,7 +28,7 @@ export default function RequestedStocks() {
 
   async function getOrders() {
     await axios
-      .get('http://localhost:8070/production/order/allOrders')
+      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
       .then((res) => {
         setOrder(res.data);
       })
@@ -64,7 +64,7 @@ export default function RequestedStocks() {
 
   async function deletesOrder(id) {
     await axios
-      .delete(`http://localhost:8070/production/order/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/production/order/delete/${id}`)
       .then((res) => {
         alert('Production cost data deleted Successfully');
         getOrders();
@@ -78,7 +78,7 @@ export default function RequestedStocks() {
     const salesStatus = 'Pending';
     //  const statusPass = {salesStatus}
     await axios
-      .put('http://localhost:8070/Production/order/updateStatus/' + id, {
+      .put('${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' + id, {
         status: salesStatus,
       })
       .then((res) => {

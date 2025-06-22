@@ -29,7 +29,7 @@ const TransportRecord = () => {
 
   const getTransport = async () => {
     axios
-      .get(`http://localhost:8070/transport/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/transport/${id}`)
       .then((res) => {
         setTransport(res.data);
       })

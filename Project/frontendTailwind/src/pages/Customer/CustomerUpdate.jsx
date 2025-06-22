@@ -35,7 +35,7 @@ function CustomerUpdate() {
 
   const getCustomer = () => {
     axios
-      .get(`http://localhost:8070/customer/view/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/customer/view/${id}`)
       .then((res) => {
         setCustomerID(res.data.customerID);
         setCustomerName(res.data.customerName);
@@ -121,7 +121,7 @@ function CustomerUpdate() {
 
                         await axios
                           .put(
-                            `http://localhost:8070/customer/update/` + id,
+                            `${process.env.REACT_APP_API_URL}/customer/update/` + id,
                             newCustomer
                           )
                           .then((res) => {

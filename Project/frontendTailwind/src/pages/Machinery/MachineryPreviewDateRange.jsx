@@ -53,7 +53,7 @@ export default function MachineryPreviewDateRange() {
     //getMachinery is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/machinery/date/' +
+        '${process.env.REACT_APP_API_URL}/machinery/date/' +
           location.state.DS +
           '/' +
           location.state.DE

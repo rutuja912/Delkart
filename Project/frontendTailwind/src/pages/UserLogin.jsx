@@ -31,7 +31,7 @@ const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         timeout: 80000, // 30 seconds timeout for Render free tier
         headers: {
           'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userInfo.token}`
+        
         }
       });
 

@@ -107,7 +107,7 @@ function MachMaintenanceUpdate() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/maintainenceMachine/update',
+                            '${process.env.REACT_APP_API_URL}/maintainenceMachine/update',
                             newMachMaintenance
                           )
                           .then((res) => {

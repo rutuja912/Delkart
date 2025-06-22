@@ -37,7 +37,7 @@ const DriverUpdate = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/driver/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/driver/${id}`)
       .then((res) => {
         setFullName(res.data.fullName);
         setDrivingLicenseNo(res.data.drivingLicenseNo);
@@ -52,7 +52,7 @@ const DriverUpdate = () => {
 
   const getEmployees = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployees(res.data);
       })
@@ -127,7 +127,7 @@ const DriverUpdate = () => {
 
                         await axios
                           .put(
-                            `http://localhost:8070/driver/update/${id}`,
+                            `${process.env.REACT_APP_API_URL}/driver/update/${id}`,
                             newDriver
                           )
                           .then((res) => {

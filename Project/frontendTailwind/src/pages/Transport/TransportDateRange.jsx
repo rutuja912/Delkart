@@ -49,7 +49,7 @@ const TransportDateRange = () => {
   const getTransport = async () => {
     axios
       .get(
-        `http://localhost:8070/transport/date/${location.state.DS}/${location.state.DE}`
+        `${process.env.REACT_APP_API_URL}/transport/date/${location.state.DS}/${location.state.DE}`
       )
       .then((res) => {
         setTransport(res.data);
@@ -79,7 +79,7 @@ const TransportDateRange = () => {
 
   const deleteTransport = async (id) => {
     await axios
-      .delete(`http://localhost:8070/transport/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/transport/delete/${id}`)
       .then((res) => {
         if (window.confirm('Do you want to delete?')) {
           alert('Transport Details Deleted');

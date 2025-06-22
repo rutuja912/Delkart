@@ -106,7 +106,7 @@ function FinanceCreateForm() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/finance/createTransaction',
+                            '${process.env.REACT_APP_API_URL}/finance/createTransaction',
                             newTransaction
                           )
                           .then((res) => {

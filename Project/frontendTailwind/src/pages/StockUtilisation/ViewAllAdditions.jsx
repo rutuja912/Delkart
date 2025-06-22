@@ -29,7 +29,7 @@ function ViewAllAdditions() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation/type/' + 'Additions')
+      .get('${process.env.REACT_APP_API_URL}/stockUtilisation/type/' + 'Additions')
       .then((res) => {
         setStockUtilisation(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -43,7 +43,7 @@ function ViewAllAdditions() {
 
   const deleteStockUtil = async (id) => {
     await axios
-      .delete('http://localhost:8070/stockUtilisation/delete/' + id)
+      .delete('${process.env.REACT_APP_API_URL}/stockUtilisation/delete/' + id)
       .then(() => {
         getStockUtil();
       })

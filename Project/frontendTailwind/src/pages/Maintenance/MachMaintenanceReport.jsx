@@ -35,7 +35,7 @@ export default function MachMaintenanceReport() {
   const getMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/maintainenceMachine/')
+      .get('${process.env.REACT_APP_API_URL}/maintainenceMachine/')
       .then((res) => {
         setMaintainenceMachine(res.data); //setMaintainence  is used to update the state variable
       })

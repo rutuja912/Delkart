@@ -32,7 +32,7 @@ function MaintenanceUpdate() {
 
   const getMaintainence = () => {
     axios
-      .get(`http://localhost:8070/maintainence/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/maintainence/${id}`)
       .then((res) => {
         const dob = new Date(res.data.lastMaintainedDate)
           .toISOString()
@@ -134,7 +134,7 @@ function MaintenanceUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/maintainence/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/maintainence/update/' + id,
                             newMaintenance
                           )
                           .then((res) => {

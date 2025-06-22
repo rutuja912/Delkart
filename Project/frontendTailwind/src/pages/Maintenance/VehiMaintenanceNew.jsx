@@ -106,7 +106,7 @@ function VehiMaintenanceNew() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/maintainenceVehicle/create',
+                            '${process.env.REACT_APP_API_URL}/maintainenceVehicle/create',
                             newMaintenance
                           )
                           .then((res) => {

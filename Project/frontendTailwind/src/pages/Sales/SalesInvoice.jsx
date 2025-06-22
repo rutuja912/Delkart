@@ -42,7 +42,7 @@ function SalesInvoice() {
 
   const getInvoice = async () => {
     axios
-      .get(`http://localhost:8070/sales/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/${id}`)
       .then((res) => {
         setOrderDate(res.data.orderDate);
         setInvoice(res.data.invoiceNo);
@@ -58,7 +58,7 @@ function SalesInvoice() {
 
   const getCustomer = async () => {
     axios
-      .get(`http://localhost:8070/sales/print/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/print/${id}`)
       .then((res) => {
         setCustomer(res.data);
       })

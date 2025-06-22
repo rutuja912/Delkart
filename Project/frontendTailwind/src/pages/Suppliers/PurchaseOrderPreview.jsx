@@ -25,7 +25,7 @@ function PurchaseOrderPreview() {
 
   const getPurchaseOrder = async () => {
     axios
-      .get('http://localhost:8070/purchaseOrder/')
+      .get('${process.env.REACT_APP_API_URL}/purchaseOrder/')
       .then((res) => {
         setPurchaseOrder(res.data);
       })

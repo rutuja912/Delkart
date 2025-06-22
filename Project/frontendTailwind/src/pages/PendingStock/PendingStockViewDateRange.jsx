@@ -38,7 +38,7 @@ function PendingStockViewDateRange() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/pendingStock/date' +
+        '${process.env.REACT_APP_API_URL}/pendingStock/date' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -56,7 +56,7 @@ function PendingStockViewDateRange() {
 
   const deletePendingStock = async (id) => {
     await axios
-      .delete('http://localhost:8070/pendingStock/delete/' + id)
+      .delete('${process.env.REACT_APP_API_URL}/pendingStock/delete/' + id)
       .then(() => {
         alert('Data deleted successfully');
         getPendingStock();

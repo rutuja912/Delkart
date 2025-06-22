@@ -51,7 +51,7 @@ const AttendanceChart = ({ employeeNumber }) => {
   const getAttendance = async () => {
     axios
       .get(
-        `http://localhost:8070/attendance/viewAllAttendanceNum/${employeeNumber}`
+        `${process.env.REACT_APP_API_URL}/attendance/viewAllAttendanceNum/${employeeNumber}`
       )
       .then((res) => {
         setAttendance(res.data);
@@ -63,7 +63,7 @@ const AttendanceChart = ({ employeeNumber }) => {
 
   const getLeave = async () => {
     axios
-      .get(`http://localhost:8070/leave/viewLeavesNum/${employeeNumber}`)
+      .get(`${process.env.REACT_APP_API_URL}/leave/viewLeavesNum/${employeeNumber}`)
       .then((res) => {
         setLeave(res.data);
       })

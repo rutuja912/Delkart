@@ -66,7 +66,7 @@ function StockAddExisting() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      //.get('http://localhost:8070/stockUtilisation')
+      //.get('${process.env.REACT_APP_API_URL}/stockUtilisation')
         .get(`${apiUrl}/stockUtilisation`)
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
@@ -190,7 +190,7 @@ function StockAddExisting() {
                         };
 
                         // console.log(newStock)
-                        // await axios.post("http://localhost:8070/stock/create", newStock).then(() => {
+                        // await axios.post("${process.env.REACT_APP_API_URL}/stock/create", newStock).then(() => {
                         //     alert("Data saved successfully");
                         //     navigate('/StockDashboard');
 

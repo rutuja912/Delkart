@@ -21,7 +21,7 @@ const AttendanceBarChart = () => {
 
   const getEmployee = () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee`)
       .then((res) => {
         setEmployee(res.data);
       })
@@ -32,7 +32,7 @@ const AttendanceBarChart = () => {
 
   const getAttendance = () => {
     axios
-      .get('http://localhost:8070/attendance/viewAttendance')
+      .get(`${process.env.REACT_APP_API_URL}/attendance/viewAttendance`)
       .then((res) => {
         setAttendance(res.data);
       })

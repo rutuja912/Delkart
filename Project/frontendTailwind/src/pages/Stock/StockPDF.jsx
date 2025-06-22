@@ -34,7 +34,7 @@ function StockPDF() {
   const getStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stock/')
+      .get('${process.env.REACT_APP_API_URL}/stock/')
       .then((res) => {
         setStock(res.data); //setStock is used to update the state variable
       })
@@ -46,7 +46,7 @@ function StockPDF() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation')
+      .get('${process.env.REACT_APP_API_URL}/stockUtilisation')
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log(res.data);

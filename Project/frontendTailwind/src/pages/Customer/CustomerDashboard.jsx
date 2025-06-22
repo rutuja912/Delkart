@@ -29,7 +29,7 @@ const CustomerDashboard = () => {
 
   const getCustomer = async () => {
     axios
-      .get('http://localhost:8070/customer/all')
+      .get('${process.env.REACT_APP_API_URL}/customer/all')
       .then((res) => {
         setCustomer(res.data);
       })

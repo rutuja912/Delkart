@@ -34,7 +34,7 @@ const FinanceDateRange = () => {
   const getFinance = async () => {
     axios
       .get(
-        'http://localhost:8070/finance/date/' +
+        '${process.env.REACT_APP_API_URL}/finance/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -67,7 +67,7 @@ const FinanceDateRange = () => {
 
   const deleteFinance = async (id) => {
     await axios
-      .delete(`http://localhost:8070/finance/deleteTransaction/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/finance/deleteTransaction/${id}`)
       .then((res) => {
         getFinance();
       })

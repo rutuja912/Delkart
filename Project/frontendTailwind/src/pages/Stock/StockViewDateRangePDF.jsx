@@ -45,7 +45,7 @@ function StockViewDateRangePDF() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/stock/date/' +
+        '${process.env.REACT_APP_API_URL}/stock/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -63,7 +63,7 @@ function StockViewDateRangePDF() {
     //getStock is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/stockUtilisation/date/' +
+        '${process.env.REACT_APP_API_URL}/stockUtilisation/date/' +
           location.state.DS +
           '/' +
           location.state.DE

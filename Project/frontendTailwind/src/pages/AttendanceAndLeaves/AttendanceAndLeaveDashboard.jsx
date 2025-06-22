@@ -51,7 +51,7 @@ const navigate = useNavigate();
 
   const getEmployee = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployee(res.data);
       })
@@ -62,7 +62,7 @@ const navigate = useNavigate();
 
   const getAttendance = async () => {
     axios
-      .get('http://localhost:8070/attendance/viewAttendance')
+      .get('${process.env.REACT_APP_API_URL}/attendance/viewAttendance')
       .then((res) => {
         setAttendance(res.data);
       })
@@ -73,7 +73,7 @@ const navigate = useNavigate();
 
   const getLeave = async () => {
     axios
-      .get('http://localhost:8070/leave/viewLeave')
+      .get('${process.env.REACT_APP_API_URL}/leave/viewLeave')
       .then((res) => {
         setLeave(res.data);
       })
@@ -152,7 +152,7 @@ const navigate = useNavigate();
 
   const deleteLeave = async (id) => {
     await axios
-      .delete(`http://localhost:8070/leave/deleteLeave/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/leave/deleteLeave/${id}`)
       .then((res) => {
         getLeave();
       })
@@ -163,7 +163,7 @@ const navigate = useNavigate();
 
   const deleteAttendance = async (id) => {
     await axios
-      .delete(`http://localhost:8070/attendance/deleteAttendance/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/attendance/deleteAttendance/${id}`)
       .then((res) => {
         getAttendance();
       })

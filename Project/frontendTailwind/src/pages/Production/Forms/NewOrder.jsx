@@ -40,7 +40,7 @@ export default function AddOrder() {
             console.log(newOrder);
             await axios
               .post(
-                'http://localhost:8070/production/order/orderCreate',
+                '${process.env.REACT_APP_API_URL}/production/order/orderCreate',
                 newOrder
               )
               .then(() => {

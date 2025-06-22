@@ -33,7 +33,7 @@ const InsightDashboard = () => {
   const [Sales, setSale] = useState([]);
   async function getOrders() {
     await axios
-      .get('http://localhost:8070/production/order/allOrders')
+      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
       .then((res) => {
         setOrder(res.data);
       })
@@ -44,7 +44,7 @@ const InsightDashboard = () => {
 
   async function getSale() {
     axios
-      .get(`http://localhost:8070/sales/`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setSale(res.data);
       })
@@ -53,7 +53,7 @@ const InsightDashboard = () => {
       });
   }
 
-  //http://localhost:8070/sales/
+  //${process.env.REACT_APP_API_URL}/sales/
 
   useEffect(() => {
     getOrders(); // <== CHANGE ACCORDING TO YOUR OWN FUNCTIONS, YOU CAN REMOVE THIS LINE IF YOU DON'T NEED IT

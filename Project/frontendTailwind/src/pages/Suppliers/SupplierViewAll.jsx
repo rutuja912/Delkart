@@ -29,7 +29,7 @@ const SupplierViewAll = () => {
 
   const getSupplier = async () => {
     axios
-      .get('http://localhost:8070/supplier/')
+      .get('${process.env.REACT_APP_API_URL}/supplier/')
       .then((res) => {
         setSupplier(res.data);
       })
@@ -50,7 +50,7 @@ const SupplierViewAll = () => {
 
   const deleteSupplier = async (id) => {
     await axios
-      .delete(`http://localhost:8070/supplier/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/supplier/delete/${id}`)
       .then((res) => {
         alert('Data deleted successfully');
         getSupplier();

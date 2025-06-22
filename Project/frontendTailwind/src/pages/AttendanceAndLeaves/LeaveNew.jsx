@@ -29,7 +29,7 @@ function LeaveNew() {
 
   const getEmployeeNumbers = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployeeNumbers')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployeeNumbers')
       .then((res) => {
         setEmployee(res.data);
       })
@@ -133,7 +133,7 @@ function LeaveNew() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/leave/createLeave',
+                            '${process.env.REACT_APP_API_URL}/leave/createLeave',
                             newLeave
                           )
                           .then((res) => {

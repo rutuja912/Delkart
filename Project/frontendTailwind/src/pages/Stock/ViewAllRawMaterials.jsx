@@ -31,7 +31,7 @@ const navigate = useNavigate();
   var price = 0;
 
   // const getStock = async () => {  //getStock is the function to get the data from the backend
-  //     axios.get("http://localhost:8070/stock")
+  //     axios.get("${process.env.REACT_APP_API_URL}/stock")
   //         .then((res) => {
   //             setStock(res.data); //setStock is used to update the state variable
   //             console.log(res.data);
@@ -44,7 +44,7 @@ const navigate = useNavigate();
   const getStock = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stock/category/' + 'Raw materials')
+      .get('${process.env.REACT_APP_API_URL}/stock/category/' + 'Raw materials')
       .then((res) => {
         setStock(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -57,7 +57,7 @@ const navigate = useNavigate();
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation/category/' + 'Raw materials')
+      .get('${process.env.REACT_APP_API_URL}/stockUtilisation/category/' + 'Raw materials')
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -71,7 +71,7 @@ const navigate = useNavigate();
 
   const deleteStock = async (id) => {
     await axios
-      .delete('http://localhost:8070/stock/delete/' + id)
+      .delete('${process.env.REACT_APP_API_URL}/stock/delete/' + id)
       .then(() => {
         getStock();
       })

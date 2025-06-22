@@ -44,7 +44,7 @@ const TransportUpdate = () => {
 
   const getDrivers = async () => {
     axios
-      .get('http://localhost:8070/driver/')
+      .get('${process.env.REACT_APP_API_URL}/driver/')
       .then((res) => {
         setDrivers(res.data);
       })
@@ -55,7 +55,7 @@ const TransportUpdate = () => {
 
   const getEmployees = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployees(res.data);
       })
@@ -66,7 +66,7 @@ const TransportUpdate = () => {
 
   const getGoods = async () => {
     axios
-      .get('http://localhost:8070/sales/')
+      .get('${process.env.REACT_APP_API_URL}/sales/')
       .then((res) => {
         setGoods(res.data);
       })
@@ -89,7 +89,7 @@ const TransportUpdate = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/transport/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/transport/${id}`)
       .then((res) => {
         setTransportID(res.data.transportID);
         setType(res.data.type);
@@ -176,7 +176,7 @@ const TransportUpdate = () => {
 
                         await axios
                           .put(
-                            `http://localhost:8070/transport/update/${id}`,
+                            `${process.env.REACT_APP_API_URL}/transport/update/${id}`,
                             newTransport
                           )
                           .then((res) => {

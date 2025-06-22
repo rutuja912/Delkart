@@ -32,7 +32,7 @@ const EmployeeReport = () => {
 
   const getEmployee = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployee(res.data);
       })

@@ -60,7 +60,7 @@ const IncomeStatement = () => {
   const getFinanceDate = async () => {
     axios
       .get(
-        'http://localhost:8070/finance/date/' +
+        '${process.env.REACT_APP_API_URL}/finance/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -76,7 +76,7 @@ const IncomeStatement = () => {
   const getSale = async () => {
     axios
       .get(
-        'http://localhost:8070/sales/date/' +
+        '${process.env.REACT_APP_API_URL}/sales/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -92,7 +92,7 @@ const IncomeStatement = () => {
 
   const getSalary = async () => {
     axios
-      .get('http://localhost:8070/salary/SalaryView')
+      .get('${process.env.REACT_APP_API_URL}/salary/SalaryView')
       .then((res) => {
         setSalary(res.data);
       })
@@ -106,7 +106,7 @@ const IncomeStatement = () => {
   const getPurchaseOrder = async () => {
     axios
       .get(
-        'http://localhost:8070/purchaseOrder/date/' +
+        '${process.env.REACT_APP_API_URL}/purchaseOrder/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -125,7 +125,7 @@ const IncomeStatement = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainenceMachine/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainenceMachine/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -144,7 +144,7 @@ const IncomeStatement = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainence/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainence/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -163,7 +163,7 @@ const IncomeStatement = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainenceVehicle/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainenceVehicle/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -182,7 +182,7 @@ const IncomeStatement = () => {
     //getMachinery is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/machinery/date/' +
+        '${process.env.REACT_APP_API_URL}/machinery/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -200,7 +200,7 @@ const IncomeStatement = () => {
   const getTransport = async () => {
     axios
       .get(
-        'http://localhost:8070/transport/date/' +
+        '${process.env.REACT_APP_API_URL}/transport/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -217,7 +217,7 @@ const IncomeStatement = () => {
   const getProduction = async () => {
     axios
       .get(
-        'http://localhost:8070/production/order/date/' +
+        '${process.env.REACT_APP_API_URL}/production/order/date/' +
           location.state.DS +
           '/' +
           location.state.DE

@@ -53,7 +53,7 @@ export default function PreviewOrderDateRange() {
   const getFinance = async () => {
     axios
       .get(
-        'http://localhost:8070/finance/date/' +
+        '${process.env.REACT_APP_API_URL}/finance/date/' +
           location.state.DS +
           '/' +
           location.state.DE

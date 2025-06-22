@@ -100,7 +100,7 @@ function AddSupplierDetails() {
 
                         await axios
                           .post(
-                            'http://localhost:8070/supplier/create',
+                            '${process.env.REACT_APP_API_URL}/supplier/create',
                             newSupplier
                           )
                           .then((res) => {

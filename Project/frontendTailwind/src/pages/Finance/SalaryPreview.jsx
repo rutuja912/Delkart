@@ -34,7 +34,7 @@ export default function PreviewSalary() {
 
   async function getSalary() {
     await axios
-      .get('http://localhost:8070/salary/SalaryView')
+      .get('${process.env.REACT_APP_API_URL}/salary/SalaryView')
       .then((res) => {
         setSalary(res.data);
       })

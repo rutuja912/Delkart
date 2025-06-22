@@ -34,7 +34,7 @@ function VehiMaintenanceUpdate() {
 
   const getVMaintainence = () => {
     axios
-      .get(`http://localhost:8070/maintainenceVehicle/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/maintainenceVehicle/${id}`)
       .then((res) => {
         const dob = new Date(res.data.lastMaintainedDate)
           .toISOString()
@@ -140,7 +140,7 @@ function VehiMaintenanceUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/maintainenceVehicle/update/' +
+                            '${process.env.REACT_APP_API_URL}/maintainenceVehicle/update/' +
                               id,
                             newMaintenance
                           )

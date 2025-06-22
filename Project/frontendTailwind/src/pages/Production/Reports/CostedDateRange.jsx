@@ -45,7 +45,7 @@ export default function CostedDateRange() {
   async function getOrders() {
     await axios
       .get(
-        'http://localhost:8070/production/order/date/' +
+        '${process.env.REACT_APP_API_URL}/production/order/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -97,7 +97,7 @@ export default function CostedDateRange() {
 
   async function deletesOrder(id) {
     await axios
-      .delete(`http://localhost:8070/production/order/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/production/order/delete/${id}`)
       .then((res) => {
         //alert("Production cost data deleted Successfully");
         getOrders();
@@ -111,7 +111,7 @@ export default function CostedDateRange() {
     const salesStatus = 'Pending';
     //  const statusPass = {salesStatus}
     await axios
-      .put('http://localhost:8070/Production/order/updateStatus/' + id, {
+      .put('${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' + id, {
         status: salesStatus,
       })
       .then((res) => {

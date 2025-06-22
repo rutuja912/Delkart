@@ -36,7 +36,7 @@ export default function MachMaintenancePreDateRange() {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainenceMachine/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainenceMachine/date/' +
           location.state.DS +
           '/' +
           location.state.DE

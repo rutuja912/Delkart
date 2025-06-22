@@ -33,7 +33,7 @@ const navigate = useNavigate();
 
   const getCustomer = async () => {
     axios
-      .get(`http://localhost:8070/customer/all`)
+      .get(`${process.env.REACT_APP_API_URL}/customer/all`)
       .then((res) => {
         setCustomer(res.data);
       })
@@ -54,7 +54,7 @@ const navigate = useNavigate();
 
   const deleteCustomer = async (id) => {
     await axios
-      .delete(`http://localhost:8070/customer/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/customer/delete/${id}`)
       .then((res) => {
         getCustomer();
       })

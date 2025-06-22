@@ -29,7 +29,7 @@ function PurchaseOrderPreview() {
   const getPurchaseOrder = async () => {
     axios
       .get(
-        'http://localhost:8070/purchaseOrder/date/' +
+        '${process.env.REACT_APP_API_URL}/purchaseOrder/date/' +
           location.state.DS +
           '/' +
           location.state.DE

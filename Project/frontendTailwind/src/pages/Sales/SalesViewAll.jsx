@@ -35,7 +35,7 @@ const SalesViewAll = () => {
 
   const getSale = async () => {
     axios
-      .get(`http://localhost:8070/sales/`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setSale(res.data);
       })
@@ -56,7 +56,7 @@ const SalesViewAll = () => {
 
   const deleteSale = async (id) => {
     await axios
-      .delete(`http://localhost:8070/sales/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/sales/delete/${id}`)
       .then((res) => {
         getSale();
       })
@@ -67,7 +67,7 @@ const SalesViewAll = () => {
 
   const getSalesbyDate = async () => {
     axios
-      .get('http://localhost:8070/sales/date/' + dateStart + '/' + dateEnd)
+      .get('${process.env.REACT_APP_API_URL}/sales/date/' + dateStart + '/' + dateEnd)
       .then((res) => {
         setSale(res.data);
       })

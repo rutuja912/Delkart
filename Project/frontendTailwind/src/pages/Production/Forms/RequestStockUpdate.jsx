@@ -66,10 +66,10 @@ export default function UpdateStockRequest() {
   const { id } = useParams(); //get the id from the url
 
   const getOrder = () => {
-    // http://localhost:8070/Production/order/pending/:invoiceNo
-    // http://localhost:8070/sales/${id}
+    // ${process.env.REACT_APP_API_URL}/Production/order/pending/:invoiceNo
+    // ${process.env.REACT_APP_API_URL}/sales/${id}
     axios
-      .get(`http://localhost:8070/Production/order/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/Production/order/${id}`)
       .then((res) => {
         setInvoice(res.data.invoiceNo);
         setItemName(res.data.product);
@@ -95,7 +95,7 @@ export default function UpdateStockRequest() {
   const [employee, setEmployee] = useState([]);
   const getEmployees = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployee(res.data);
       })
@@ -189,7 +189,7 @@ export default function UpdateStockRequest() {
                         console.log(updateOrder);
                         const salesStatus = 'In Production';
                         //  const statusPass = {salesStatus}
-                        // await axios.put('http://localhost:8070/Production/order/updateStatus/'+id,{"status":salesStatus}).then((res)=>{
+                        // await axios.put('${process.env.REACT_APP_API_URL}/Production/order/updateStatus/'+id,{"status":salesStatus}).then((res)=>{
                         //     alert("Sale Status Changed");
                         // }).catch((error)=>{
                         //     console.log(error)
@@ -198,7 +198,7 @@ export default function UpdateStockRequest() {
                         console.log(updateOrder);
                         await axios
                           .put(
-                            'http://localhost:8070/production/order/update/' +
+                            '${process.env.REACT_APP_API_URL}/production/order/update/' +
                               id,
                             updateOrder
                           )

@@ -45,7 +45,7 @@ const MachineryDateRange = () => {
     //getMachinery is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/machinery/date/' +
+        '${process.env.REACT_APP_API_URL}/machinery/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -82,7 +82,7 @@ const MachineryDateRange = () => {
 
   const deleteMachinery = async (id) => {
     await axios
-      .delete(`http://localhost:8070/machinery/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/machinery/delete/${id}`)
       .then((res) => {
         getMachinery();
       })

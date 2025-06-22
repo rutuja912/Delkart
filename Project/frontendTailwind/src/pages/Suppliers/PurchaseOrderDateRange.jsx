@@ -33,7 +33,7 @@ function PurchaseOrderDateRange() {
   const getPurchaseOrder = async () => {
     axios
       .get(
-        'http://localhost:8070/purchaseOrder/date/' +
+        '${process.env.REACT_APP_API_URL}/purchaseOrder/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -53,7 +53,7 @@ function PurchaseOrderDateRange() {
 
   const deletePurchaseOrder = async (id) => {
     await axios
-      .delete(`http://localhost:8070/purchaseOrder/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/purchaseOrder/delete/${id}`)
       .then((res) => {
         alert('Data deleted successfully');
         getPurchaseOrder();

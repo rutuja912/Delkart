@@ -41,7 +41,7 @@ function RequestedOrdersUpdate() {
 
   const getPendingStock = () => {
     axios
-      .get('http://localhost:8070/pendingStock/' + id)
+      .get('${process.env.REACT_APP_API_URL}/pendingStock/' + id)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -60,7 +60,7 @@ function RequestedOrdersUpdate() {
 
   const getStock = async () => {
     await axios
-      .get('http://localhost:8070/stock/ViewStock/' + code)
+      .get('${process.env.REACT_APP_API_URL}/stock/ViewStock/' + code)
       .then((res) => {
         console.log('data', res.data);
         setStock(res.data);
@@ -218,7 +218,7 @@ function RequestedOrdersUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/pendingStock/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/pendingStock/update/' + id,
                             newPStock
                           )
                           .then((res) => {
@@ -236,7 +236,7 @@ function RequestedOrdersUpdate() {
                         if (success === false) {
                           await axios
                             .post(
-                              'http://localhost:8070/stock/create',
+                              '${process.env.REACT_APP_API_URL}/stock/create',
                               newStock
                             )
                             .then(() => {
@@ -260,7 +260,7 @@ function RequestedOrdersUpdate() {
                         }
                         await axios
                           .post(
-                            'http://localhost:8070/stockUtilisation/create',
+                            '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
                             newStockUtil
                           )
                           .then(() => {

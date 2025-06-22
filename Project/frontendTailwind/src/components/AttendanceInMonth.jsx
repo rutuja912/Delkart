@@ -53,7 +53,7 @@ const AttendanceInMonth = ({ employeeNumber }) => {
   const getAttendance = async () => {
     axios
       .get(
-        `http://localhost:8070/attendance/viewAllAttendanceNum/${employeeNumber}`
+        `${process.env.REACT_APP_API_URL}/attendance/viewAllAttendanceNum/${employeeNumber}`
       )
       .then((res) => {
         setAttendance(res.data);

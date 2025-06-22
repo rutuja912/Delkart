@@ -37,7 +37,7 @@ function PurchaseOrderView() {
 
   const getPurchaseOrder = async () => {
     axios
-      .get('http://localhost:8070/purchaseOrder/')
+      .get('${process.env.REACT_APP_API_URL}/purchaseOrder/')
       .then((res) => {
         setPurchaseOrder(res.data);
       })
@@ -50,7 +50,7 @@ function PurchaseOrderView() {
 
   const deletePurchaseOrder = async (id) => {
     await axios
-      .delete(`http://localhost:8070/purchaseOrder/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/purchaseOrder/delete/${id}`)
       .then((res) => {
         getPurchaseOrder();
       })

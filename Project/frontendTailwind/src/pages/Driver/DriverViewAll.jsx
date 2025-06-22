@@ -49,7 +49,7 @@ const DriverViewViewAll = () => {
 
   const getDriver = async () => {
     axios
-      .get('http://localhost:8070/driver/')
+      .get('${process.env.REACT_APP_API_URL}/driver/')
       .then((res) => {
         setDriver(res.data);
       })
@@ -70,7 +70,7 @@ const DriverViewViewAll = () => {
 
   const deleteDriver = async (id) => {
     await axios
-      .delete(`http://localhost:8070/driver/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/driver/delete/${id}`)
       .then((res) => {
         getDriver();
       })

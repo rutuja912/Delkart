@@ -34,7 +34,7 @@ const navigate = useNavigate();
 
   const getEmployee = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployee(res.data);
       })
@@ -83,7 +83,7 @@ const navigate = useNavigate();
 
   const deleteEmployee = async (id) => {
     await axios
-      .delete(`http://localhost:8070/employee/deleteEmployee/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/employee/deleteEmployee/${id}`)
       .then((res) => {
         getEmployee();
       })

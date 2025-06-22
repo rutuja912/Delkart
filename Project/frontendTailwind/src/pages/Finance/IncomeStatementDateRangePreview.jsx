@@ -90,7 +90,7 @@ const IncomeStatementPreview = () => {
   const getFinanceDate = async () => {
     axios
       .get(
-        'http://localhost:8070/finance/date/' + curDate_minus1 + '/' + curDate
+        '${process.env.REACT_APP_API_URL}/finance/date/' + curDate_minus1 + '/' + curDate
       )
       .then((res) => {
         setTransactions(res.data);
@@ -102,7 +102,7 @@ const IncomeStatementPreview = () => {
   //sales get function
   const getSale = async () => {
     axios
-      .get('http://localhost:8070/sales/date/' + curDate_minus1 + '/' + curDate)
+      .get('${process.env.REACT_APP_API_URL}/sales/date/' + curDate_minus1 + '/' + curDate)
       .then((res) => {
         setSales(res.data);
       })
@@ -115,7 +115,7 @@ const IncomeStatementPreview = () => {
   const getPurchaseOrder = async () => {
     axios
       .get(
-        'http://localhost:8070/purchaseOrder/date/' +
+        '${process.env.REACT_APP_API_URL}/purchaseOrder/date/' +
           curDate_minus1 +
           '/' +
           curDate
@@ -132,7 +132,7 @@ const IncomeStatementPreview = () => {
 
   const getSalary = async () => {
     axios
-      .get('http://localhost:8070/salary/SalaryView')
+      .get('${process.env.REACT_APP_API_URL}/salary/SalaryView')
       .then((res) => {
         setSalary(res.data);
       })
@@ -147,7 +147,7 @@ const IncomeStatementPreview = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainenceMachine/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainenceMachine/date/' +
           curDate_minus1 +
           '/' +
           curDate
@@ -166,7 +166,7 @@ const IncomeStatementPreview = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainence/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainence/date/' +
           curDate_minus1 +
           '/' +
           curDate
@@ -185,7 +185,7 @@ const IncomeStatementPreview = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainenceVehicle/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainenceVehicle/date/' +
           curDate_minus1 +
           '/' +
           curDate
@@ -204,7 +204,7 @@ const IncomeStatementPreview = () => {
     //getMachinery is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/machinery/date/' + curDate_minus1 + '/' + curDate
+        '${process.env.REACT_APP_API_URL}/machinery/date/' + curDate_minus1 + '/' + curDate
       )
       .then((res) => {
         setMachinery(res.data); //setMachinery is used to update the state variable
@@ -219,7 +219,7 @@ const IncomeStatementPreview = () => {
   const getTransport = async () => {
     axios
       .get(
-        'http://localhost:8070/transport/date/' + curDate_minus1 + '/' + curDate
+        '${process.env.REACT_APP_API_URL}/transport/date/' + curDate_minus1 + '/' + curDate
       )
       .then((res) => {
         setTransport(res.data);
@@ -234,7 +234,7 @@ const IncomeStatementPreview = () => {
   const getProduction = async () => {
     axios
       .get(
-        'http://localhost:8070/production/order/date/' +
+        '${process.env.REACT_APP_API_URL}/production/order/date/' +
           curDate_minus1 +
           '/' +
           curDate

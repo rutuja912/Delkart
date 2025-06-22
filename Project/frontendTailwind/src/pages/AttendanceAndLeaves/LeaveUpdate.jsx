@@ -38,7 +38,7 @@ const LeaveUpdate = () => {
 
   const getLeave = () => {
     axios
-      .get(`http://localhost:8070/leave/viewLeave/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/leave/viewLeave/${id}`)
       .then((res) => {
         const start = new Date(res.data.leaveStartDate)
           .toISOString()
@@ -136,7 +136,7 @@ const LeaveUpdate = () => {
 
                         await axios
                           .put(
-                            'http://localhost:8070/leave/updateLeave/' + id,
+                            '${process.env.REACT_APP_API_URL}/leave/updateLeave/' + id,
                             newEmployee
                           )
                           .then((res) => {

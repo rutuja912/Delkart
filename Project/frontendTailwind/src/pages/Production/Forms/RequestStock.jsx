@@ -69,10 +69,10 @@ export default function UpdateOrder() {
   const { id } = useParams(); //get the id from the url
 
   const getSale = () => {
-    // http://localhost:8070/Production/order/pending/:invoiceNo
-    // http://localhost:8070/sales/${id}
+    // ${process.env.REACT_APP_API_URL}/Production/order/pending/:invoiceNo
+    // ${process.env.REACT_APP_API_URL}/sales/${id}
     axios
-      .get(`http://localhost:8070/Production/order/pending/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/Production/order/pending/${id}`)
       .then((res) => {
         setInvoice(res.data.invoiceNo);
         setItemName(res.data.itemName);
@@ -89,7 +89,7 @@ export default function UpdateOrder() {
   const [employee, setEmployee] = useState([]);
   const getEmployees = async () => {
     axios
-      .get('http://localhost:8070/employee/viewEmployee')
+      .get('${process.env.REACT_APP_API_URL}/employee/viewEmployee')
       .then((res) => {
         setEmployee(res.data);
       })
@@ -185,7 +185,7 @@ export default function UpdateOrder() {
                         //  const statusPass = {salesStatus}
                         await axios
                           .put(
-                            'http://localhost:8070/Production/order/updateStatus/' +
+                            '${process.env.REACT_APP_API_URL}/Production/order/updateStatus/' +
                               id,
                             { status: salesStatus }
                           )
@@ -199,7 +199,7 @@ export default function UpdateOrder() {
                         console.log(newOrder);
                         await axios
                           .post(
-                            'http://localhost:8070/production/order/orderCreate',
+                            '${process.env.REACT_APP_API_URL}/production/order/orderCreate',
                             newOrder
                           )
                           .then(() => {

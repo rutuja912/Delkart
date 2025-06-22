@@ -38,7 +38,7 @@ function SalesUpdate() {
 
   const getSale = () => {
     axios
-      .get(`http://localhost:8070/sales/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/${id}`)
       .then((res) => {
         setInvoice(res.data.invoiceNo);
         setOrderDate(res.data.orderDate);
@@ -130,7 +130,7 @@ function SalesUpdate() {
 
                         await axios
                           .put(
-                            `http://localhost:8070/sales/update/` + id,
+                            `${process.env.REACT_APP_API_URL}/sales/update/` + id,
                             newOrder
                           )
                           .then((res) => {

@@ -37,7 +37,7 @@ const navigate = useNavigate();
 
   const getLeave = async () => {
     axios
-      .get('http://localhost:8070/leave/viewLeave')
+      .get('${process.env.REACT_APP_API_URL}/leave/viewLeave')
       .then((res) => {
         setLeave(res.data);
       })
@@ -85,7 +85,7 @@ const navigate = useNavigate();
 
   const deleteLeave = async (id) => {
     await axios
-      .delete(`http://localhost:8070/leave/deleteLeave/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/leave/deleteLeave/${id}`)
       .then((res) => {
         getLeave();
       })

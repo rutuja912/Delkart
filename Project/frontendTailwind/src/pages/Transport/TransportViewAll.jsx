@@ -96,7 +96,7 @@ const TransportViewAll = () => {
 
   const getTransport = async () => {
     axios
-      .get('http://localhost:8070/transport/')
+      .get(`${process.env.REACT_APP_API_URL}/transport/`)
       .then((res) => {
         setTransport(res.data);
       })
@@ -117,7 +117,7 @@ const TransportViewAll = () => {
 
   const deleteTransport = async (id) => {
     await axios
-      .delete(`http://localhost:8070/transport/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/transport/delete/${id}`)
       .then((res) => {
         getTransport();
       })

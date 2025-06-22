@@ -32,7 +32,7 @@ const PendingOrders = () => {
 
   const getSale = async () => {
     axios
-      .get(`http://localhost:8070/sales/`)
+      .get(`${process.env.REACT_APP_API_URL}/sales/`)
       .then((res) => {
         setSale(res.data);
       })
@@ -47,7 +47,7 @@ const PendingOrders = () => {
 
   const deleteSale = async (id) => {
     await axios
-      .delete(`http://localhost:8070/sales/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/sales/delete/${id}`)
       .then((res) => {
         console.log('Deleted Successfully');
         getSale();

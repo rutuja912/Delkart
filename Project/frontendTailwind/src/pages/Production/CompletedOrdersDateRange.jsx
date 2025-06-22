@@ -33,7 +33,7 @@ export default function CompletedOrdersDateRange() {
   const getFinance = async () => {
     axios
       .get(
-        'http://localhost:8070/production/order/date/' +
+        '${process.env.REACT_APP_API_URL}/production/order/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -54,7 +54,7 @@ export default function CompletedOrdersDateRange() {
 
   async function getOrders() {
     await axios
-      .get('http://localhost:8070/production/order/allOrders')
+      .get('${process.env.REACT_APP_API_URL}/production/order/allOrders')
       .then((res) => {
         setOrder(res.data);
       })
@@ -84,7 +84,7 @@ export default function CompletedOrdersDateRange() {
 
   async function deletesOrder(id) {
     await axios
-      .delete(`http://localhost:8070/production/order/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/production/order/delete/${id}`)
       .then((res) => {
         alert('Production cost data deleted Successfully');
         getFinance();

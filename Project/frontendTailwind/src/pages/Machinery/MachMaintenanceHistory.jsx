@@ -41,7 +41,7 @@ const MachMaintenanceHistory = () => {
   const getMachinery = async () => {
     //getMachinery is the function to get the data from the backend
     axios
-      .get(`http://localhost:8070/machinery/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/machinery/${id}`)
       .then((res) => {
         setMachinery(res.data); //setMachinery is used to update the state variable
       })
@@ -56,7 +56,7 @@ const MachMaintenanceHistory = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        `http://localhost:8070/maintainenceMachine/viewMaintainenceMachinesNum/${machNo}`
+        `${process.env.REACT_APP_API_URL}/maintainenceMachine/viewMaintainenceMachinesNum/${machNo}`
       )
       .then((res) => {
         setMaintainenceMachine(res.data); //setMaintainence  is used to update the state variable

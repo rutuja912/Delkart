@@ -34,7 +34,7 @@ const LeaveReport = () => {
 
   const getLeave = async () => {
     axios
-      .get('http://localhost:8070/leave/viewLeave')
+      .get('${process.env.REACT_APP_API_URL}/leave/viewLeave')
       .then((res) => {
         setLeave(res.data);
       })

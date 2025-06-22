@@ -48,7 +48,7 @@ function EmployeeUpdate() {
 
   const getEmployee = () => {
     axios
-      .get(`http://localhost:8070/employee/viewEmployee/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/employee/viewEmployee/${id}`)
       .then((res) => {
         const dob = new Date(res.data.employeeDOB).toISOString().split('T')[0];
         const doj = new Date(res.data.employeeDateOfJoin)
@@ -159,7 +159,7 @@ function EmployeeUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/employee/updateEmployee/' +
+                            '${process.env.REACT_APP_API_URL}/employee/updateEmployee/' +
                               id,
                             newEmployee
                           )

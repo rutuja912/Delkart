@@ -34,7 +34,7 @@ export default function PreviewOrder() {
 
   async function getFinance() {
     await axios
-      .get('http://localhost:8070/finance/viewTransaction')
+      .get('${process.env.REACT_APP_API_URL}/finance/viewTransaction')
       .then((res) => {
         setTransactions(res.data);
       })

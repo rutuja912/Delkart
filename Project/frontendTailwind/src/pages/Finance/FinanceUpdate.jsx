@@ -36,7 +36,7 @@ function TransactionUpdate() {
 
   const getTransaction = () => {
     axios
-      .get(`http://localhost:8070/finance/viewTransaction/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/finance/viewTransaction/${id}`)
       .then((res) => {
         const date = new Date(res.data.trnRecordedDate)
           .toISOString()
@@ -131,7 +131,7 @@ function TransactionUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/finance/updateTransaction/' +
+                            '${process.env.REACT_APP_API_URL}/finance/updateTransaction/' +
                               id,
                             newTransaction
                           )

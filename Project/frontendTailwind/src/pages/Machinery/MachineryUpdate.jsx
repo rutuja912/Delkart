@@ -37,7 +37,7 @@ function MachineryUpdate() {
 
   const getMachinery = () => {
     axios
-      .get(`http://localhost:8070/machinery/${id}`) //get the data from the backend
+      .get(`${process.env.REACT_APP_API_URL}/machinery/${id}`) //get the data from the backend
       .then((res) => {
         const dateOfPurchased = new Date(res.data.dateOfPurchased)
           .toISOString()
@@ -136,7 +136,7 @@ function MachineryUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/machinery/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/machinery/update/' + id,
                             newMachine
                           )
                           .then((res) => {

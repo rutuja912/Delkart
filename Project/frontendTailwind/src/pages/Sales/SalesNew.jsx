@@ -111,7 +111,7 @@ function SalesCreateForm() {
                         };
 
                         await axios
-                          .post('http://localhost:8070/sales/create', newOrder)
+                          .post('${process.env.REACT_APP_API_URL}/sales/create', newOrder)
                           .then((res) => {
                             //alert("Invoice saved successfully");
                             Swal.fire({

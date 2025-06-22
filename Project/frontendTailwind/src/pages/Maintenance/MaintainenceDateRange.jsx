@@ -40,7 +40,7 @@ const MaintainenceDateRange = () => {
     //getMaintainence is the function to get the data from the backend
     axios
       .get(
-        'http://localhost:8070/maintainence/date/' +
+        '${process.env.REACT_APP_API_URL}/maintainence/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -71,7 +71,7 @@ const MaintainenceDateRange = () => {
 
   const deleteMaintainence = async (id) => {
     await axios
-      .delete(`http://localhost:8070/maintainence/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/maintainence/delete/${id}`)
       .then((res) => {
         getMaintainence();
       })

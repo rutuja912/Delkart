@@ -34,7 +34,7 @@ function PurchaseOrderUpdate() {
 
   const getPurchaseOrder = async () => {
     axios
-      .get(`http://localhost:8070/purchaseOrder/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/purchaseOrder/${id}`)
       .then((res) => {
         setOrderID(res.data.orderID);
         setSupplierID(res.data.supplierID);
@@ -129,7 +129,7 @@ function PurchaseOrderUpdate() {
 
                         await axios
                           .put(
-                            `http://localhost:8070/purchaseOrder/update/${id}`,
+                            `${process.env.REACT_APP_API_URL}/purchaseOrder/update/${id}`,
                             updatedPurchaseOrdr
                           )
                           .then((res) => {

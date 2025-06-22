@@ -33,7 +33,7 @@ const SalesDateRange = () => {
   const getSale = async () => {
     axios
       .get(
-        'http://localhost:8070/sales/date/' +
+        '${process.env.REACT_APP_API_URL}/sales/date/' +
           location.state.DS +
           '/' +
           location.state.DE
@@ -66,7 +66,7 @@ const SalesDateRange = () => {
 
   const deleteSale = async (id) => {
     await axios
-      .delete(`http://localhost:8070/sales/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/sales/delete/${id}`)
       .then((res) => {
         alert('Deleted Successfully');
         getSale();

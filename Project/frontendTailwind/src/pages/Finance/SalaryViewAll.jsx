@@ -34,7 +34,7 @@ const FinanceViewAll = () => {
 
   const getSalary = async () => {
     axios
-      .get('http://localhost:8070/salary/SalaryView')
+      .get('${process.env.REACT_APP_API_URL}/salary/SalaryView')
       .then((res) => {
         setSalary(res.data);
       })
@@ -55,7 +55,7 @@ const FinanceViewAll = () => {
 
   const deleteFinance = async (id) => {
     await axios
-      .delete(`http://localhost:8070/salary/deleteSalary/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/salary/deleteSalary/${id}`)
       .then((res) => {
         getSalary();
       })

@@ -47,7 +47,7 @@ const VehiMaintenanceViewAll = () => {
   const getVMaintainence = async () => {
     //getMaintainence is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/maintainenceVehicle/')
+      .get('${process.env.REACT_APP_API_URL}/maintainenceVehicle/')
       .then((res) => {
         setMaintainenceVehi(res.data); //setMaintainence  is used to update the state variable
       })
@@ -68,7 +68,7 @@ const VehiMaintenanceViewAll = () => {
 
   const deleteVMaintainence = async (id) => {
     await axios
-      .delete(`http://localhost:8070/maintainenceVehicle/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/maintainenceVehicle/delete/${id}`)
       .then((res) => {
         getVMaintainence();
       })

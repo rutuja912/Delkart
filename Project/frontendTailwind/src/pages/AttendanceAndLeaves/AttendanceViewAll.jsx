@@ -37,7 +37,7 @@ const navigate = useNavigate();
 
   const getAttendance = async () => {
     axios
-      .get('http://localhost:8070/attendance/viewAttendance')
+      .get('${process.env.REACT_APP_API_URL}/attendance/viewAttendance')
       .then((res) => {
         setAttendance(res.data);
       })
@@ -86,7 +86,7 @@ const navigate = useNavigate();
 
   const deleteAttendance = async (id) => {
     await axios
-      .delete(`http://localhost:8070/attendance/deleteAttendance/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/attendance/deleteAttendance/${id}`)
       .then((res) => {
         getAttendance();
       })

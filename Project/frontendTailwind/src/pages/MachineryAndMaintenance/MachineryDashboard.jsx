@@ -37,7 +37,7 @@ const MachineryDashboard = () => {
   const getMachinery = async () => {
     //getMachinery is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/machinery/')
+      .get('${process.env.REACT_APP_API_URL}/machinery/')
       .then((res) => {
         setMachinery(res.data); //setMachinery is used to update the state variable
       })

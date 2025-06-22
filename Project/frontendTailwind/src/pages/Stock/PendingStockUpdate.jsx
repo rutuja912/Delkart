@@ -35,7 +35,7 @@ function PendingStockUpdate() {
 
   const getPendingStock = () => {
     axios
-      .get('http://localhost:8070/pendingStock/' + id)
+      .get('${process.env.REACT_APP_API_URL}/pendingStock/' + id)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -128,7 +128,7 @@ function PendingStockUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/pendingStock/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/pendingStock/update/' + id,
                             newStock
                           )
                           .then((res) => {

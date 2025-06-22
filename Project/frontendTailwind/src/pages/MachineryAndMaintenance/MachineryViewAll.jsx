@@ -31,7 +31,7 @@ const MachineryViewAll = () => {
   const getMachinery = async () => {
     //getMachinery is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/machinery/')
+      .get('${process.env.REACT_APP_API_URL}/machinery/')
       .then((res) => {
         setMachinery(res.data); //setMachinery is used to update the state variable
       })
@@ -52,7 +52,7 @@ const MachineryViewAll = () => {
 
   const deleteMachinery = async (id) => {
     await axios
-      .delete(`http://localhost:8070/machinery/delete/${id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/machinery/delete/${id}`)
       .then((res) => {
         alert('Data deleted successfully');
         getMachinery();

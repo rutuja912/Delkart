@@ -45,7 +45,7 @@ function AddStockForRequisition() {
   //stock request
   const getStock = async () => {
     await axios
-      .get(`http://localhost:8070/stock/ViewStock/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/stock/ViewStock/${id}`)
       .then((res) => {
         console.log('data', res.data);
         setStock(res.data);
@@ -167,7 +167,7 @@ function AddStockForRequisition() {
                         console.log(newStock);
                         await axios
                           .post(
-                            'http://localhost:8070/pendingStock/create',
+                            '${process.env.REACT_APP_API_URL}/pendingStock/create',
                             newStock
                           )
                           .then(() => {

@@ -51,7 +51,7 @@ function StockBreakdownUpdate() {
 
   const getStock = () => {
     axios
-      .get('http://localhost:8070/stock/' + id)
+      .get('${process.env.REACT_APP_API_URL}/stock/' + id)
       .then((res) => {
         setStockCode(res.data.stockCode);
         setStockName(res.data.stockName);
@@ -70,7 +70,7 @@ function StockBreakdownUpdate() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation')
+      .get('${process.env.REACT_APP_API_URL}/stockUtilisation')
       .then((res) => {
         setStockUtilisation(res.data); //setStock is used to update the state variable
         console.log(res.data);
@@ -209,7 +209,7 @@ function StockBreakdownUpdate() {
 
                         await axios
                           .put(
-                            'http://localhost:8070/stock/update/' + id,
+                            '${process.env.REACT_APP_API_URL}/stock/update/' + id,
                             newStock
                           )
                           .then((res) => {

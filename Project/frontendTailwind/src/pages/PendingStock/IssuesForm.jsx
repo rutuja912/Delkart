@@ -59,7 +59,7 @@ function IssuesForm() {
   //stock request
   const getCompleteOrder = () => {
     axios
-      .get(`http://localhost:8070/stock/request/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/stock/request/${id}`)
       .then((res) => {
         console.log('date', res.data);
         setInvoiceNo(res.data.invoiceNo);
@@ -76,7 +76,7 @@ function IssuesForm() {
 
   const getStock = async () => {
     axios
-      .get(`http://localhost:8070/stock/ViewStockname/${name}`)
+      .get(`${process.env.REACT_APP_API_URL}/stock/ViewStockname/${name}`)
       .then((res) => {
         console.log('Stock', res.data);
         setStock(res.data);
@@ -90,7 +90,7 @@ function IssuesForm() {
   const getStockUtil = async () => {
     //getStock is the function to get the data from the backend
     axios
-      .get('http://localhost:8070/stockUtilisation')
+      .get('${process.env.REACT_APP_API_URL}/stockUtilisation')
       .then((res) => {
         setStockUtil(res.data); //setStock is used to update the state variable
         console.log('stock util', res.data);
@@ -219,7 +219,7 @@ function IssuesForm() {
                         if (remaining >= quantity) {
                           await axios
                             .post(
-                              'http://localhost:8070/stockUtilisation/create',
+                              '${process.env.REACT_APP_API_URL}/stockUtilisation/create',
                               newStockUtil
                             )
                             .then(() => {
@@ -243,7 +243,7 @@ function IssuesForm() {
                           const statusPass = { salesStatus };
                           await axios
                             .put(
-                              'http://localhost:8070/stock/updateStatus/' + id,
+                              '${process.env.REACT_APP_API_URL}/stock/updateStatus/' + id,
                               { status: salesStatus }
                             )
                             .then((res) => {})

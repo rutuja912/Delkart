@@ -102,7 +102,7 @@ function MachineryCreateForm() {
 
                         axios
                           .post(
-                            'http://localhost:8070/machinery/create',
+                            '${process.env.REACT_APP_API_URL}/machinery/create',
                             newMachine
                           )
                           .then(() => {
